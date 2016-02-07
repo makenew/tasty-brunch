@@ -1,0 +1,26 @@
+---
+_options:
+  partials:
+    - app/partials/meta.static.hbs
+    - app/partials/favicon.static.html
+---
+<!doctype html>
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{> meta}}
+    <meta name="msapplication-config" content="none">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link type="text/plain" rel="author" href="humans.txt">
+    <link rel="stylesheet" href="DIGEST(app.css)">
+    {{> favicon}}
+  </head>
+  <body>
+    {{content}}
+    <script>document.documentElement.className = 'js'</script>
+    <script src="DIGEST(app.js)"></script>
+    <script>require('application').default()</script>
+  </body>
+</html>
