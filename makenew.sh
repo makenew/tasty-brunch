@@ -43,8 +43,8 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed -i -e '9,155d;322,325d' README.md
-  sed -i -e "9i ${mk_description}" README.md
+  sed -i -e '11,157d;324,327d' README.md
+  sed -i -e "11i ${mk_description}" README.md
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -60,7 +60,7 @@ makenew () {
   find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
   mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
-  sed -i -e "7i ${mk_attribution}\n" README.md
+  sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
   echo 'Replacing boilerplate.'

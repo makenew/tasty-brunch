@@ -1,7 +1,9 @@
 # Tasty Brunch App Skeleton
 
+[![GitHub release](https://img.shields.io/github/release/makenew/tasty-brunch.svg)](https://github.com/makenew/tasty-brunch/releases)
 [![GitHub license](https://img.shields.io/github/license/makenew/tasty-brunch.svg)](./LICENSE.txt)
-[![Gemnasium](https://img.shields.io/gemnasium/makenew/tasty-brunch.svg)](https://gemnasium.com/makenew/tasty-brunch)
+[![David](https://img.shields.io/david/makenew/tasty-brunch.svg)](https://david-dm.org/makenew/tasty-brunch)
+[![David](https://img.shields.io/david/dev/makenew/tasty-brunch.svg)](https://david-dm.org/makenew/tasty-brunch#info=devDependencies)
 [![Travis](https://img.shields.io/travis/makenew/tasty-brunch.svg)](https://travis-ci.org/makenew/tasty-brunch)
 
 ## Description
