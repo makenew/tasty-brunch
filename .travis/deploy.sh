@@ -29,9 +29,8 @@ echo
 set -v
 
 openssl aes-256-cbc \
-  # TODO: Remove this line and replace the two below with your unique values.
-  -K $encrypted_000000000000_key \
-  -iv $encrypted_000000000000_iv \
+  -K $encrypted_c7dfecfeaff7_key \
+  -iv $encrypted_c7dfecfeaff7_iv \
   -in .travis/deploy.key.enc \
   -out .travis/deploy.key -d
 
