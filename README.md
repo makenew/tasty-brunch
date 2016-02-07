@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/makenew/tasty-brunch.svg)](./LICENSE.txt)
 [![David](https://img.shields.io/david/makenew/tasty-brunch.svg)](https://david-dm.org/makenew/tasty-brunch)
 [![David](https://img.shields.io/david/dev/makenew/tasty-brunch.svg)](https://david-dm.org/makenew/tasty-brunch#info=devDependencies)
-[![Travis](https://img.shields.io/travis/makenew/tasty-brunch.svg)](https://travis-ci.org/makenew/tasty-brunch)
+[![Travis](https://img.shields.io/travis/makenew/tasty-brunch/demo.svg)](https://travis-ci.org/makenew/tasty-brunch)
 
 > Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).
 
