@@ -117,7 +117,7 @@ an instant-feedback development cycle and deployment pipeline.
 
 9. If hosting this as part of a larger website,
    the following boilerplate files can be removed:
-   `crossdomain.xml` and `robots.txt`.
+   `404.static.hbs`, `crossdomain.xml`, and `robots.txt`.
 
 [Choose a license]: http://choosealicense.com/
 [FA2PNG]: http://fa2png.io/
