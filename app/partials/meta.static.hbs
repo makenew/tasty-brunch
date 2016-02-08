@@ -8,9 +8,9 @@
   <meta property="og:description" content="{{meta.description}}">
 {{/if}}
 
-{{#if url}}
-  <link rel="canonical" href="{{url}}">
-  <meta property="og:url" content="{{url}}">
+{{#if canonical}}
+  <link rel="canonical" href="{{url}}{{baseurl}}{{canonical}}">
+  <meta property="og:url" content="{{url}}{{baseurl}}{{canonical}}">
 {{/if}}
 
 <meta property="og:updated_time" content="{{updated_time}}">

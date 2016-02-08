@@ -3,6 +3,9 @@ _options:
   partials:
     - app/partials/meta.static.hbs
     - app/partials/favicon.static.html
+
+url: https://makenew.github.io
+baseurl: /tasty-brunch
 ---
 <!doctype html>
 <html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
@@ -13,7 +16,7 @@ _options:
     {{> meta}}
     <meta name="msapplication-config" content="none">
     <meta name="mobile-web-app-capable" content="yes">
-    <link type="text/plain" rel="author" href="humans.txt">
+    <link type="text/plain" rel="author" href="{{baseurl}}/humans.txt">
     <link rel="stylesheet" href="DIGEST(/app.css)">
     {{> favicon}}
   </head>
