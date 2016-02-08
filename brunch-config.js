@@ -15,6 +15,10 @@ exports.config = {
   },
 
   plugins: {
+    digest: {
+      referenceFiles: /\.(css|html|js)$/
+    },
+
     postcss: {
       processors: [
         require('autoprefixer')(['last 8 versions'])
