@@ -40,11 +40,11 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
-              updated_time() {
-                return new Date().toISOString();
+              join (context, block) {
+                return context.join(block.hash.delimiter)
               },
-              join(context, block) {
-                return context.join(block.hash.delimiter);
+              updated_time () {
+                return new Date().toISOString()
               }
             }
           }
