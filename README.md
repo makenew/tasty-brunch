@@ -30,7 +30,7 @@ an instant-feedback development cycle and deployment pipeline.
 - Frontend and development dependency management with [npm].
 - Synchronised browser testing with [Browsersync].
 - Cache-optimized assets with [digest-brunch].
-- Linting with the [JavaScript Standard Style] and [Sass Lint].
+- Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
 - Consistent element style with [sanitize.css].
 - Favicons with [Favic-o-matic].
@@ -55,6 +55,7 @@ an instant-feedback development cycle and deployment pipeline.
 [Handlebars]: http://handlebarsjs.com/
 [html-brunch-static]: https://github.com/bmatcuk/html-brunch-static
 [HTML5 Boilerplate]: https://html5boilerplate.com/
+[HTMLHint]: https://github.com/yaniswang/HTMLHint
 [HTMLMinifier]: https://github.com/kangax/html-minifier
 [humans.txt]: http://humanstxt.org/
 [JavaScript Standard Style]: http://standardjs.com/
