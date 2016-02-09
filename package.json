@@ -45,6 +45,7 @@
     "brunch-static": "^1.1.0",
     "del-cli": "^0.1.2",
     "digest-brunch": "^1.5.1",
+    "eslint": "^2.0.0-rc.0",
     "git-rev-sync": "^1.4.0",
     "gulp": "^3.9.0",
     "gulp-cli": "^1.2.0",
