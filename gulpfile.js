@@ -37,19 +37,19 @@ gulp.task('sass-lint', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.src('public')
+  gulp.src('public/**/*.html')
     .pipe(watch('public/**/*.html'))
     .pipe(plumber())
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
 
-  gulp.src('app')
+  gulp.src('app/**/*.js')
     .pipe(watch('app/**/*.js'))
     .pipe(plumber())
     .pipe(standard())
     .pipe(standard.reporter('default'))
 
-  return gulp.src('app')
+  return gulp.src('app/*/**/.scss')
     .pipe(watch('app/**/*.scss'))
     .pipe(plumber())
     .pipe(sassLint())
