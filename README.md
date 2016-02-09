@@ -10,12 +10,16 @@
 
 Bootstrap a new [Brunch] app in less than a minute.
 
+Check out the **[live demo]** and its **[source code]**!
+
 Start building your modern single page app
 with the fastest build tool around.
 No assumptions: just the essential boilerplate with
 an instant-feedback development cycle and deployment pipeline.
 
 [Brunch]: http://brunch.io/
+[live demo]: https://makenew.github.io/tasty-brunch/
+[source code]: https://github.com/makenew/tasty-brunch/tree/demo
 
 ### Features
 
