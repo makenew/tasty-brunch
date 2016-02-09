@@ -1,4 +1,4 @@
-# Make New Tasty Brunch
+# Tasty Brunch Demo App
 
 [![GitHub release](https://img.shields.io/github/release/makenew/tasty-brunch.svg)](https://github.com/makenew/tasty-brunch/releases)
 [![GitHub license](https://img.shields.io/github/license/makenew/tasty-brunch.svg)](./LICENSE.txt)
@@ -10,7 +10,10 @@
 
 ## Description
 
-Make New tasty brunch demo.
+[Simple demo app] for [Tasty Brunch].
+
+[Simple demo app]: https://makenew.github.io/tasty-brunch/
+[Tasty Brunch]: https://github.com/makenew/tasty-brunch
 
 ## Quickstart
 
