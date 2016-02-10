@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Demo app for Tasty Brunch.",
   "private": true,
   "keywords": [
@@ -43,6 +43,7 @@
     "browser-sync-brunch": "0.0.9",
     "brunch": "^2.2.3",
     "brunch-static": "^1.1.0",
+    "cssnano": "^3.4.0",
     "del-cli": "^0.1.2",
     "digest-brunch": "^1.5.1",
     "eslint": "^2.0.0-rc.0",

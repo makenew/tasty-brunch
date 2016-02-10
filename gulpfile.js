@@ -25,15 +25,15 @@ gulp.task('standard', () => {
   return gulp.src('app/**/*.js')
     .pipe(standard())
     .pipe(standard.reporter('default', {
-        breakOnError: true
-    }));
+      breakOnError: true
+    }))
 })
 
 gulp.task('sass-lint', () => {
   return gulp.src('app/**/*.scss')
     .pipe(sassLint())
     .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
+    .pipe(sassLint.failOnError())
 })
 
 gulp.task('watch', () => {
@@ -53,7 +53,7 @@ gulp.task('watch', () => {
     .pipe(watch('app/**/*.scss'))
     .pipe(plumber())
     .pipe(sassLint())
-    .pipe(sassLint.format());
+    .pipe(sassLint.format())
 })
 
 gulp.task('minify', () => {
@@ -73,5 +73,5 @@ gulp.task('deploy', () => {
     .pipe(ghPages({
       remoteUrl: `git@github.com:${pkg.repository}.git`,
       message: `Deploy ${gitRevSync.short()} from v${pkg.version}`
-    }));
+    }))
 })
