@@ -27,13 +27,19 @@
     "lint:watch": "gulp watch",
     "minify": "gulp minify",
     "start": "brunch watch --server",
-    "pretest": "gulp lint"
+    "pretest": "gulp lint",
+    "test": "mocha --opts mocha.opts app/**/*.spec.js",
+    "test:watch": "gulp autotest"
   },
   "files": [
     "public"
   ],
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "it"
+    ]
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
@@ -43,6 +49,7 @@
     "browser-sync-brunch": "0.0.9",
     "brunch": "^2.2.3",
     "brunch-static": "^1.1.0",
+    "chai": "^3.5.0",
     "cssnano": "^3.4.0",
     "del-cli": "^0.1.2",
     "digest-brunch": "^1.5.1",
@@ -53,12 +60,14 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^1.3.0",
+    "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass-lint": "^1.1.1",
     "gulp-standard": "^5.2.2",
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
+    "mocha": "^2.4.5",
     "postcss-brunch": "^0.5.0",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",

@@ -3,6 +3,13 @@ exports.config = {
     enabled: true
   },
 
+  conventions: {
+    ignored: [
+      /[\\/]_/,
+      /\.spec\.js$/
+    ]
+  },
+
   files: {
     javascripts: {
       joinTo: 'app.js'

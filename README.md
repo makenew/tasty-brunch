@@ -98,6 +98,20 @@ View available commands with
 $ brunch
 ```
 
+#### Tests
+
+Run Mocha tests with
+
+```
+$ npm test
+```
+
+In a separate window, use gulp to watch for changes and run tests with
+
+```
+$ npm test:watch
+```
+
 #### gulp
 
 Linting and deployment is handled by [gulp].

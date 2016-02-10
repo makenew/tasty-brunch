@@ -5,6 +5,7 @@ const gulp = require('gulp')
 const ghPages = require('gulp-gh-pages')
 const htmlhint = require('gulp-htmlhint')
 const htmlmin = require('gulp-htmlmin')
+const mocha = require('gulp-mocha')
 const plumber = require('gulp-plumber')
 const sassLint = require('gulp-sass-lint')
 const standard = require('gulp-standard')
@@ -34,6 +35,18 @@ gulp.task('sass-lint', () => {
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
+})
+
+gulp.task('test', () => {
+  return gulp.src('app/**/*.spec.js', {read: false})
+    .pipe(mocha({
+      compilers: require('babel-core/register'),
+      reporter: 'nyan'
+    }))
+})
+
+gulp.task('autotest', () => {
+  return gulp.watch('app/**/*.js', ['test'])
 })
 
 gulp.task('watch', () => {
