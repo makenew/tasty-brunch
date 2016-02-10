@@ -30,7 +30,7 @@ an instant-feedback development cycle and deployment pipeline.
 - Extensive intelligent meta tag support.
 - Write modern JavaScript with [Babel] and the [ES2015 preset].
 - Write styles with [Sass] and [Autoprefixer].
-- Production build assets optimized with Sass and [UglifyJS].
+- Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
 - Synchronised browser testing with [Browsersync].
 - Cache-optimized assets with [digest-brunch].
@@ -50,6 +50,7 @@ an instant-feedback development cycle and deployment pipeline.
 [Babel]: https://babeljs.io/
 [Browsersync]: https://www.browsersync.io/
 [Brunch]: http://brunch.io/
+[cssnano]: http://cssnano.co/
 [digest-brunch]: https://github.com/mutewinter/digest-brunch
 [EditorConfig]: http://editorconfig.org/
 [ES2015 preset]: https://babeljs.io/docs/plugins/preset-es2015/

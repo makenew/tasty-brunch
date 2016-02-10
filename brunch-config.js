@@ -14,6 +14,19 @@ exports.config = {
     }
   },
 
+  overrides: {
+    production: {
+      plugins: {
+        postcss: {
+          processors: [
+            require('autoprefixer'),
+            require('cssnano')
+          ]
+        }
+      }
+    }
+  },
+
   plugins: {
     digest: {
       prependHost: {
@@ -24,7 +37,7 @@ exports.config = {
 
     postcss: {
       processors: [
-        require('autoprefixer')(['last 8 versions'])
+        require('autoprefixer')
       ]
     },
 
