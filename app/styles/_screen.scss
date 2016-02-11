@@ -1,19 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.l-header,
+.l-main,
+.l-footer {
+  margin: 1rem;
+}
+
+.l-header,
+.l-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.l-main {
+  flex: 1;
+}
+
 .title {
   background-image: url('DIGEST(/images/brunch-icon-mark.png)');
   background-position: center left;
   background-repeat: no-repeat;
   background-size: 1em;
-  font-size: 1.5rem;
-  padding-left: 1em;
+  font-size: 1.4rem;
+  padding-left: 1.2em;
+
+  @media (#{$bp-larger-than-mobile}) {
+    font-size: 1.8rem;
+  }
 
   @media (#{$bp-larger-than-phablet}) {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 
 .external {
   > li {
     display: inline-block;
+    margin: .5rem;
   }
 }
 
