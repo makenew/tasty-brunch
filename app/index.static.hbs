@@ -3,6 +3,7 @@ _options:
   layout: app/layouts/main.static.hbs
   partials:
     - app/partials/application.static.hbs
+    - app/partials/external.static.html
 
 meta:
   canonical: /
@@ -25,16 +26,14 @@ meta:
     site: ~
     creator: ~
 ---
-<header>
-  <h1>Tasty Brunch Demo App</h1>
+<header class="l-header">
+  <h1 class="title">Tasty Brunch Demo App</h1>
 </header>
 
-<main>
+<main class="l-main">
   {{> application}}
 </main>
 
-<footer>
-  <a href="https://github.com/makenew/tasty-brunch">
-    Build your own Tasty Brunch app!
-  </a>
+<footer class="l-footer">
+  {{> external}}
 </footer>

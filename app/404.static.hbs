@@ -1,6 +1,8 @@
 ---
 _options:
   layout: app/layouts/main.static.hbs
+  partials:
+    - app/partials/external.static.html
 
 meta:
   title: 404 Error
@@ -8,4 +10,14 @@ meta:
   name: makenew-tasty-brunch
   locale: en_US
 ---
-<h1>Page not found.</h1>
+<header class="l-header">
+  <h1>Page not found</h1>
+</header>
+
+<main class="l-main">
+  <p><a class="icon icon-home" href="/tasty-brunch/">Return home.</a></p>
+</main>
+
+<footer class="l-footer">
+  {{> external}}
+</footer>
