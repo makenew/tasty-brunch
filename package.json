@@ -76,6 +76,7 @@
     "yaml-front-matter": "^3.3.0"
   },
   "dependencies": {
-    "sanitize.css": "^3.2.0"
+    "sanitize.css": "^3.2.0",
+    "skeleton-scss": "^2.0.4"
   }
 }
