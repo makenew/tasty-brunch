@@ -10,10 +10,22 @@
 
 ## Description
 
-[Simple demo app] for [Tasty Brunch].
+**[Demo app] for [Tasty Brunch].**
 
-[Simple demo app]: https://makenew.github.io/tasty-brunch/
+- Simple counter app built with [Redux] and [React].
+- Testing with [Mocha] and [Chai].
+- Built on [Skeleton-Sass] with [Raleway] font loaded
+  by [Web Font Loader].
+
+[Chai]: http://chaijs.com/
+[Demo app]: https://makenew.github.io/tasty-brunch/
+[Mocha]: https://mochajs.org/
+[React]: https://facebook.github.io/react/
+[Raleway]: https://github.com/impallari/Raleway/
+[Redux]: http://redux.js.org/
+[Skeleton-Sass]: https://github.com/WhatsNewSaes/Skeleton-Sass
 [Tasty Brunch]: https://github.com/makenew/tasty-brunch
+[Web Font Loader]: https://github.com/typekit/webfontloader
 
 ## Quickstart
 
