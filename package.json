@@ -15,10 +15,10 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "build": "de public && brunch build",
-    "clean": "de public",
+    "build": "del public && brunch build",
+    "clean": "del public",
     "deploy": "gulp minify && gulp deploy",
-    "dist": "de public && npm test && brunch build -p && gulp htmlhint",
+    "dist": "del public && npm test && brunch build -p && gulp htmlhint",
     "gh-pages": "gulp deploy",
     "lint": "gulp lint",
     "lint:html": "gulp htmlhint",
@@ -47,7 +47,7 @@
     "brunch": "^2.2.3",
     "brunch-static": "^1.1.0",
     "cssnano": "^3.4.0",
-    "del-cli": "^0.1.2",
+    "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",
     "eslint": "^2.0.0-rc.0",
     "git-rev-sync": "^1.4.0",
