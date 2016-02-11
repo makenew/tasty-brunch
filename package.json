@@ -35,6 +35,9 @@
   "standard": {
     "parser": "babel-eslint"
   },
+  "dependencies": {
+    "sanitize.css": "^3.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel-brunch": "^6.0.0",
@@ -65,8 +68,5 @@
     "standard": "^6.0.1",
     "uglify-js-brunch": "^2.0.1",
     "yaml-front-matter": "^3.3.0"
-  },
-  "dependencies": {
-    "sanitize.css": "^3.2.0"
   }
 }
