@@ -35,11 +35,7 @@
     "public"
   ],
   "standard": {
-    "parser": "babel-eslint",
-    "globals": [
-      "describe",
-      "it"
-    ]
+    "parser": "babel-eslint"
   },
   "dependencies": {
     "react": "^0.14.7",

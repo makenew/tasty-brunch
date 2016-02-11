@@ -1,3 +1,5 @@
+/* global describe, it */
+
 import { expect } from 'chai'
 
 import counter from './counter'
