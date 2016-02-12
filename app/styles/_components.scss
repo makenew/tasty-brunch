@@ -6,7 +6,11 @@
   justify-content: center;
 
   p {
-    font-size: 5rem;
+    font-size: 3rem;
+
+    @media (#{$bp-larger-than-mobile}) {
+      font-size: 5rem;
+    }
   }
 
   button {
