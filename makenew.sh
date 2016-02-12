@@ -43,7 +43,7 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed -i -e '11,165d;332,335d' README.md
+  sed -i -e '3d;12,166d;333,336d' README.md
   sed -i -e "11i ${mk_description}" README.md
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
@@ -59,7 +59,7 @@ makenew () {
   find_replace "s/cd tasty-brunch/cd ${mk_repo}/g"
   find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
-  mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
+  mk_attribution='> <img src="https://makenew.github.io/makenew.svg" alt="Make New" height="20"> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
   sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
