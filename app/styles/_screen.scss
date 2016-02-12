@@ -7,16 +7,13 @@ body {
 .l-header,
 .l-main,
 .l-footer {
+  display: flex;
+  justify-content: center;
   margin: 1rem;
 }
 
-.l-header,
-.l-footer {
-  display: flex;
-  justify-content: center;
-}
-
 .l-main {
+  align-items: center;
   flex: 1;
 }
 

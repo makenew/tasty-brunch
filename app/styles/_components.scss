@@ -1,0 +1,15 @@
+.counter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Code Pro', monospace;
+  justify-content: center;
+
+  p {
+    font-size: 5rem;
+  }
+
+  button {
+    font-size: 4rem;
+  }
+}
