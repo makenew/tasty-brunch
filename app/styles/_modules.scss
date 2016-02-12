@@ -1,0 +1,45 @@
+.title {
+  background-image: url('DIGEST(/images/brunch-icon-mark.png)');
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  font-size: 1.4rem;
+  padding-left: 1.2em;
+
+  @media (#{$bp-larger-than-mobile}) {
+    font-size: 1.8rem;
+  }
+
+  @media (#{$bp-larger-than-phablet}) {
+    font-size: 2.8rem;
+  }
+}
+
+.external {
+  > li {
+    display: inline-block;
+    margin: .5rem;
+  }
+}
+
+.icon {
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  padding-left: 1em;
+}
+
+.icon-github {
+  background-image: url('DIGEST(/images/GitHub-Mark-120px-plus.png)');
+}
+
+.icon-home {
+  &::before {
+    content: '🏠';
+    margin-right: 1rem;
+  }
+}
+
+.icon-makenew {
+  background-image: url('DIGEST(/images/makenew.png)');
+}
