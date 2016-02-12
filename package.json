@@ -56,6 +56,7 @@
     "brunch": "^2.2.3",
     "brunch-static": "^1.1.0",
     "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",
@@ -75,8 +76,10 @@
     "javascript-brunch": "^2.0.0",
     "mocha": "^2.4.5",
     "postcss-brunch": "^0.5.0",
+    "react-addons-test-utils": "^0.14.7",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
+    "skin-deep": "^0.14.0",
     "standard": "^6.0.1",
     "uglify-js-brunch": "^2.0.1",
     "yaml-front-matter": "^3.3.0"
