@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "dependencies": {
     "abbrev": {
       "version": "1.0.7",
@@ -1051,6 +1051,11 @@
       "from": "chai@>=3.5.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/chai/-/chai-3.5.0.tgz"
     },
+    "chai-spies": {
+      "version": "0.7.1",
+      "from": "chai-spies@>=0.7.1 <0.8.0",
+      "resolved": "https://registry.npmjs.org/chai-spies/-/chai-spies-0.7.1.tgz"
+    },
     "chalk": {
       "version": "1.1.1",
       "from": "chalk@>=1.1.0 <2.0.0",
@@ -1498,9 +1503,9 @@
       "resolved": "https://registry.npmjs.org/del/-/del-2.2.0.tgz"
     },
     "del-cli": {
-      "version": "0.1.2",
-      "from": "del-cli@>=0.1.2 <0.2.0",
-      "resolved": "https://registry.npmjs.org/del-cli/-/del-cli-0.1.2.tgz"
+      "version": "0.2.0",
+      "from": "del-cli@0.2.0",
+      "resolved": "https://registry.npmjs.org/del-cli/-/del-cli-0.2.0.tgz"
     },
     "delayed-stream": {
       "version": "1.0.0",
@@ -3053,6 +3058,11 @@
       "from": "is-stream@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/is-stream/-/is-stream-1.0.1.tgz"
     },
+    "is-subset": {
+      "version": "0.1.1",
+      "from": "is-subset@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/is-subset/-/is-subset-0.1.1.tgz"
+    },
     "is-svg": {
       "version": "1.1.1",
       "from": "is-svg@>=1.1.1 <2.0.0",
@@ -4555,6 +4565,11 @@
       "from": "react@>=0.14.7 <0.15.0",
       "resolved": "https://registry.npmjs.org/react/-/react-0.14.7.tgz"
     },
+    "react-addons-test-utils": {
+      "version": "0.14.7",
+      "from": "react-addons-test-utils@>=0.14.7 <0.15.0",
+      "resolved": "https://registry.npmjs.org/react-addons-test-utils/-/react-addons-test-utils-0.14.7.tgz"
+    },
     "react-dom": {
       "version": "0.14.7",
       "from": "react-dom@>=0.14.7 <0.15.0",
@@ -5100,6 +5115,11 @@
       "from": "skeleton-scss@>=2.0.4 <3.0.0",
       "resolved": "https://registry.npmjs.org/skeleton-scss/-/skeleton-scss-2.0.4.tgz"
     },
+    "skin-deep": {
+      "version": "0.14.0",
+      "from": "skin-deep@>=0.14.0 <0.15.0",
+      "resolved": "https://registry.npmjs.org/skin-deep/-/skin-deep-0.14.0.tgz"
+    },
     "slash": {
       "version": "1.0.0",
       "from": "slash@>=1.0.0 <2.0.0",
@@ -5469,9 +5489,9 @@
       "resolved": "https://registry.npmjs.org/table/-/table-3.7.8.tgz",
       "dependencies": {
         "bluebird": {
-          "version": "3.2.2",
+          "version": "3.3.0",
           "from": "bluebird@>=3.1.1 <4.0.0",
-          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.2.2.tgz"
+          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.3.0.tgz"
         }
       }
     },
