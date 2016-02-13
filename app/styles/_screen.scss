@@ -1,7 +1,7 @@
 .l-body {
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 100vh;
 }
 
 .l-header,
@@ -9,7 +9,7 @@
 .l-footer {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: .5rem;
 }
 
 .l-main {
