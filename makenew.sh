@@ -59,7 +59,7 @@ makenew () {
   find_replace "s/cd tasty-brunch/cd ${mk_repo}/g"
   find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
-  mk_attribution='> <img src="https://makenew.github.io/makenew.svg" alt="Make New" height="20"> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
+  mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
   sed -i -e "9i ${mk_attribution}\n" README.md
 
   echo
