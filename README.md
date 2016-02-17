@@ -87,7 +87,7 @@ an instant-feedback development cycle and deployment pipeline.
    Optionally, reset to the latest [release][Releases] with
 
    ```
-   $ git reset --hard tasty-brunch-v1.1.1
+   $ git reset --hard tasty-brunch-v1.2.0
    ```
 
 2. Run
