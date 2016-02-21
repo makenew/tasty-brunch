@@ -67,7 +67,6 @@
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
     "standard": "^6.0.5",
-    "uglify-js-brunch": "^2.0.1",
-    "yaml-front-matter": "^3.3.0"
+    "uglify-js-brunch": "^2.0.1"
   }
 }
