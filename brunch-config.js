@@ -26,7 +26,7 @@ exports.config = {
   plugins: {
     digest: {
       prependHost: {
-        production: '/tasty-brunch'
+        production: 'https://makenew.github.io/tasty-brunch'
       },
       referenceFiles: /\.(css|html|js)$/
     },
