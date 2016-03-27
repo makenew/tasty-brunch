@@ -33,7 +33,7 @@ an instant-feedback development cycle and deployment pipeline.
 - Write styles with [Sass] and [Autoprefixer].
 - Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
-- Synchronised browser testing with [Browsersync].
+- Automatic browser reloading with [auto-reload-brunch].
 - Cache-optimized assets with [digest-brunch].
 - Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
@@ -47,9 +47,9 @@ an instant-feedback development cycle and deployment pipeline.
 - Consistent coding with [EditorConfig].
 - Badges from [Shields.io].
 
+[auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
 [Autoprefixer]: https://github.com/postcss/autoprefixer
 [Babel]: https://babeljs.io/
-[Browsersync]: https://www.browsersync.io/
 [Brunch]: http://brunch.io/
 [cssnano]: http://cssnano.co/
 [digest-brunch]: https://github.com/mutewinter/digest-brunch
