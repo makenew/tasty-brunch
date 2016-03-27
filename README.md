@@ -307,8 +307,9 @@ Meta data is defined in `app/index.static.hbs`.
   Fields which are Nil by default are generally optional.
 - The `image`, `audio`, and `video` fields must be given
   as a fully qualified url.
-  Be careful that the asset actually exists, i.e., use a unique
-  image file and not one passed through `DIGEST` elsewhere.
+  The recommended way to specify this value is with `DIGEST`, e.g.,
+  assuming `app/assets/images/logo.png` exists,
+  use `image: DIGEST(/images/logo.png)`.
 - Instead of the `video` field, you may specify a `youtube` video id.
 - The `twitter` fields are used for [Twitter Cards], but you must
   enable them for your domain with Twitter first.
