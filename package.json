@@ -45,7 +45,7 @@
     "babel-preset-es2015": "^6.3.13",
     "browser-sync-brunch": "0.0.9",
     "brunch": "^2.3.2",
-    "brunch-static": "^1.1.0",
+    "brunch-static": "^1.1.1",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",
