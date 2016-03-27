@@ -41,7 +41,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel-brunch": "^6.0.0",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^6.0.0",
     "babel-preset-es2015": "^6.3.13",
     "browser-sync-brunch": "0.0.9",
     "brunch": "^2.3.2",
