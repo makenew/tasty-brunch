@@ -1,6 +1,8 @@
 exports.config = {
   npm: {
-    enabled: true
+    styles: {
+      'normalize.css': ['normalize.css']
+    }
   },
 
   conventions: {
@@ -15,9 +17,7 @@ exports.config = {
       joinTo: 'app.js'
     },
     stylesheets: {
-      joinTo: {
-        'app.css': /^app\/styles/
-      }
+      joinTo: 'app.css'
     }
   },
 
@@ -37,7 +37,7 @@ exports.config = {
   plugins: {
     digest: {
       prependHost: {
-        production: '/tasty-brunch'
+        production: 'https://makenew.github.io/tasty-brunch'
       },
       referenceFiles: /\.(css|html|js)$/
     },
