@@ -1,4 +1,10 @@
 exports.config = {
+  npm: {
+    styles: {
+      'normalize.css': ['normalize.css']
+    }
+  },
+
   files: {
     javascripts: {
       joinTo: 'app.js'

@@ -36,7 +36,7 @@
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "sanitize.css": "^3.2.0"
+    "normalize.css": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.1",

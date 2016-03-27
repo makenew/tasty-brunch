@@ -37,7 +37,7 @@ an instant-feedback development cycle and deployment pipeline.
 - Cache-optimized assets with [digest-brunch].
 - Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
-- Consistent element style with [sanitize.css].
+- Normalized element styles with [Normalize.css].
 - Favicons with [Favic-o-matic].
 - The internet is for humans with [humans.txt].
 - [Travis CI] ready.
@@ -67,7 +67,7 @@ an instant-feedback development cycle and deployment pipeline.
 [JavaScript Standard Style]: http://standardjs.com/
 [Keep a CHANGELOG]: http://keepachangelog.com/
 [npm]: https://www.npmjs.com/
-[sanitize.css]: https://10up.github.io/sanitize.css/
+[Normalize.css]: https://necolas.github.io/normalize.css/
 [Sass]: http://sass-lang.com/
 [Sass Lint]: https://github.com/sasstools/sass-lint
 [Shields.io]: http://shields.io/
