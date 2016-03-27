@@ -8,7 +8,7 @@ if [ ! "${TRAVIS:-}" = 'true' ]; then
   exit 1
 fi
 
-if [ "${TRAVIS_PULL_REQUEST:-}" = 'true' ]; then
+if [ ! "${TRAVIS_PULL_REQUEST:-}" = 'false' ]; then
   echo 'Skipping deploy step for pull request.'
   exit
 fi
