@@ -6,17 +6,14 @@
   justify-content: center;
 
   p {
-    font-size: 5rem;
+    font-size: 9rem;
     margin-bottom: 0;
-
-    @media (#{$bp-larger-than-mobile}) {
-      font-size: 5rem;
-    }
   }
 
   button {
-    font-size: 4rem;
+    font-size: 7rem;
     height: initial;
     line-height: inherit;
+    padding: 0 .5em;
   }
 }

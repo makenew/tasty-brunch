@@ -2,34 +2,25 @@
   text-align: center;
 
   > h1 {
-    font-size: 1.4rem;
+    font-size: 3rem;
     margin-bottom: 0;
 
-    @media (#{$bp-larger-than-mobile}) {
-      font-size: 1.8rem;
-    }
-
     @media (#{$bp-larger-than-phablet}) {
-      font-size: 2.8rem;
+      font-size: 5.8rem;
     }
   }
 
   > p {
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 
   > a {
     background-position: center left;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 3rem;
+    height: 5rem;
     margin: 1rem 0;
-    width: 3rem;
-
-    @media (#{$bp-larger-than-phablet}) {
-      height: 4rem;
-      width: 4rem;
-    }
+    width: 5rem;
   }
 }
 
@@ -38,6 +29,7 @@
 
   > li {
     display: inline-block;
+    font-size: 2rem;
     margin: .5rem;
   }
 }
