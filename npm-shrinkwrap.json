@@ -3124,11 +3124,6 @@
       "from": "hoek@>=2.0.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/hoek/-/hoek-2.16.3.tgz"
     },
-    "hoist-non-react-statics": {
-      "version": "1.0.5",
-      "from": "hoist-non-react-statics@>=1.0.3 <2.0.0",
-      "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-1.0.5.tgz"
-    },
     "home-or-tmp": {
       "version": "1.0.0",
       "from": "home-or-tmp@>=1.0.0 <2.0.0",
@@ -4843,11 +4838,6 @@
       "version": "0.14.7",
       "from": "react-dom@>=0.14.7 <0.15.0",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-0.14.7.tgz"
-    },
-    "react-redux": {
-      "version": "4.4.1",
-      "from": "react-redux@>=4.4.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/react-redux/-/react-redux-4.4.1.tgz"
     },
     "read-all-stream": {
       "version": "3.1.0",
