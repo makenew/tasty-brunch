@@ -4626,9 +4626,9 @@
       "resolved": "https://registry.npmjs.org/skeleton-scss/-/skeleton-scss-2.0.4.tgz"
     },
     "skin-deep": {
-      "version": "0.14.0",
-      "from": "skin-deep@>=0.14.0 <0.15.0",
-      "resolved": "https://registry.npmjs.org/skin-deep/-/skin-deep-0.14.0.tgz"
+      "version": "0.16.0",
+      "from": "skin-deep@0.16.0",
+      "resolved": "https://registry.npmjs.org/skin-deep/-/skin-deep-0.16.0.tgz"
     },
     "slash": {
       "version": "1.0.0",

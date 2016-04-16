@@ -79,7 +79,7 @@
     "react-addons-test-utils": "^0.14.7",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
-    "skin-deep": "^0.14.0",
+    "skin-deep": "^0.16.0",
     "standard": "^6.0.5",
     "uglify-js-brunch": "^2.0.1"
   }
