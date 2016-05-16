@@ -15,6 +15,7 @@ const paths = {
   html: 'public/**/.html',
   images: 'public/**/*',
   scripts: 'app/**/*.js',
+  spec: 'app/**/*.spec.js',
   styles: 'app/**/*.scss'
 }
 
@@ -43,7 +44,7 @@ gulp.task('sass-lint', () => {
 })
 
 gulp.task('test', () => {
-  return gulp.src('app/**/*.spec.js', {read: false})
+  return gulp.src(paths.spec, {read: false})
     .pipe($.mocha({
       compilers: require('babel-core/register'),
       reporter: 'nyan'
@@ -51,7 +52,7 @@ gulp.task('test', () => {
 })
 
 gulp.task('autotest', () => {
-  return gulp.watch('app/**/*.js', ['test'])
+  return gulp.watch(paths.scripts, ['test'])
 })
 
 gulp.task('watch', () => {
