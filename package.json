@@ -60,14 +60,14 @@
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass-lint": "^1.1.1",
-    "gulp-standard": "^6.0.5",
+    "gulp-standard": "^7.0.1",
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^0.5.0",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
-    "standard": "^6.0.5",
+    "standard": "^7.0.1",
     "uglify-js-brunch": "^2.0.1"
   }
 }
