@@ -10,17 +10,24 @@ const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
 
+const paths = {
+  dist: 'public',
+  html: 'public/**/.html',
+  scripts: 'app/**/*.js',
+  styles: 'app/**/*.scss'
+}
+
 gulp.task('default', ['lint', 'watch'])
 gulp.task('lint', ['standard', 'sass-lint'])
 
 gulp.task('htmlhint', () => {
-  return gulp.src('public/**/*.html')
+  return gulp.src(paths.html)
     .pipe($.htmlhint())
     .pipe($.htmlhint.failReporter())
 })
 
 gulp.task('standard', () => {
-  return gulp.src('app/**/*.js')
+  return gulp.src(paths.scripts)
     .pipe($.standard())
     .pipe($.standard.reporter('default', {
       breakOnError: true
@@ -28,46 +35,46 @@ gulp.task('standard', () => {
 })
 
 gulp.task('sass-lint', () => {
-  return gulp.src('app/**/*.scss')
+  return gulp.src(paths.styles)
     .pipe($.sassLint())
     .pipe($.sassLint.format())
     .pipe($.sassLint.failOnError())
 })
 
 gulp.task('watch', () => {
-  gulp.src('public/**/*.html')
-    .pipe($.watch('public/**/*.html'))
+  gulp.src(paths.html)
+    .pipe($.watch(paths.html))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
 
-  gulp.src('app/**/*.js')
-    .pipe($.watch('app/**/*.js'))
+  gulp.src(paths.scripts)
+    .pipe($.watch(paths.scripts))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
 
-  return gulp.src('app/*/**/.scss')
-    .pipe($.watch('app/**/*.scss'))
+  return gulp.src(paths.styles)
+    .pipe($.watch(paths.styles))
     .pipe($.plumber())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
 })
 
 gulp.task('minify', () => {
-  return gulp.src('public/**/*.html')
+  return gulp.src(paths.html)
     .pipe($.htmlmin({
       collapseWhitespace: true,
       preserveLineBreaks: true,
       minifyJS: true
     }))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest(paths.dist))
 })
 
 gulp.task('deploy', (done) => {
-  fs.openSync(path.join('public', '.nojekyll'), 'w')
+  fs.openSync(path.join(paths.dist, '.nojekyll'), 'w')
 
-  return ghpages.publish(path.join(__dirname, 'public'), {
+  return ghpages.publish(paths.dist, {
     clone: '.deploy',
     depth: 2,
     dotfiles: true,
