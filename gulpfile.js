@@ -64,8 +64,13 @@ gulp.task('watch', () => {
 gulp.task('minify', () => {
   return gulp.src(paths.html)
     .pipe($.htmlmin({
+      collapseBooleanAttributes: true,
       collapseWhitespace: true,
       preserveLineBreaks: true,
+      removeComments: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      minifyCSS: true,
       minifyJS: true
     }))
     .pipe(gulp.dest(paths.dist))
