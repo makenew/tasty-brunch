@@ -8,6 +8,8 @@
 
 > Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).
 
+[![wercker status](https://app.wercker.com/status/da977a4ff69fde0e557244a0c12f8933/m "wercker status")](https://app.wercker.com/project/bykey/da977a4ff69fde0e557244a0c12f8933)
+
 ## Description
 
 **[Demo app] for [Tasty Brunch].**
@@ -147,7 +149,7 @@ $ gulp --tasks
 
 #### HTMLMinifier
 
-Minify all `.html` files in the `public` directory with
+Minify all HTML and image files in the `public` directory with
 
 ```
 $ npm run minify
@@ -161,18 +163,21 @@ Deploy the `public` directory to GitHub Pages with
 $ npm run deploy
 ```
 
-This will minify the HTML before deployment.
+This will minify the HTML and images before deployment.
 Deploy the `public` directory as-is with
 
 ```
 $ npm run gh-pages
 ```
 
-If `SOURCE_BRANCH` is set as a Travis CI environment variable,
-then commits pushed to that branch will be deployed automatically.
-This requires `.travis/deploy.key.enc` to be encrypted on Travis,
-the corresponding decryption command in `.travis/deploy.sh`, and
-the corresponding public key added as a deploy key to the GitHub repository.
+The following environment variables can be set to customize the deploy:
+`DEPLOY_REPO`, `DEPLOY_BRANCH`, `DEPLOY_NAME`, and `DEPLOY_EMAIL`.
+
+#### Deploy from wrecker
+
+Create a new wercker SSH key with the name `DEPLOY`,
+add it to a new wercker deploy step,
+and add it to the GitHub repository as a deploy key with write access.
 
 ### Meta Data
 

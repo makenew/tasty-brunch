@@ -7,4 +7,4 @@ URL: https://makenew.github.io/tasty-brunch/
 Source: https://github.com/makenew/tasty-brunch
 
 /* LIBRARIES */
-https://10up.github.io/sanitize.css/
+https://necolas.github.io/normalize.css/
