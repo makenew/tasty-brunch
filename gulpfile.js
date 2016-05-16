@@ -1,8 +1,10 @@
 'use strict'
 
 const fs = require('fs')
+const path = require('path')
 
 const gitRevSync = require('git-rev-sync')
+const ghpages = require('gh-pages')
 const gulp = require('gulp')
 const $ = require('gulp-load-plugins')()
 
@@ -62,12 +64,20 @@ gulp.task('minify', () => {
     .pipe(gulp.dest('public'))
 })
 
-gulp.task('deploy', () => {
-  fs.openSync('public/.nojekyll', 'w')
+gulp.task('deploy', (done) => {
+  fs.openSync(path.join('public', '.nojekyll'), 'w')
 
-  return gulp.src(['public/.nojekyll', 'public/**/*'])
-    .pipe($.ghPages({
-      remoteUrl: `git@github.com:${pkg.repository}.git`,
-      message: `Deploy ${gitRevSync.short()} from v${pkg.version}`
-    }))
+  return ghpages.publish(path.join(__dirname, 'public'), {
+    clone: '.deploy',
+    depth: 2,
+    dotfiles: true,
+    message: `Deploy ${gitRevSync.short()} from v${pkg.version} [ci skip]`,
+    repo: process.env.DEPLOY_REPO || `git@github.com:${pkg.repository}.git`,
+    branch: process.env.DEPLOY_BRANCH || 'gh-pages',
+    logger: (message) => { console.log(`[ deploy ] ${message}`) },
+    user: {
+      name: process.env.DEPLOY_NAME || pkg.author.name,
+      email: process.env.DEPLOY_EMAIL || pkg.author.email
+    }
+  }, done)
 })

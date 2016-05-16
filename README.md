@@ -7,6 +7,8 @@
 [![David](https://img.shields.io/david/dev/makenew/tasty-brunch.svg)](https://david-dm.org/makenew/tasty-brunch#info=devDependencies)
 [![Travis](https://img.shields.io/travis/makenew/tasty-brunch.svg)](https://travis-ci.org/makenew/tasty-brunch)
 
+[![wercker status](https://app.wercker.com/status/da977a4ff69fde0e557244a0c12f8933/m "wercker status")](https://app.wercker.com/project/bykey/da977a4ff69fde0e557244a0c12f8933)
+
 ## Description
 
 Bootstrap a new [Brunch] app in less than a minute.
@@ -40,8 +42,9 @@ an instant-feedback development cycle and deployment pipeline.
 - Normalized element styles with [Normalize.css].
 - Favicons with [Favic-o-matic].
 - The internet is for humans with [humans.txt].
-- [Travis CI] ready.
-- Deploy to [GitHub pages] locally or from [Travis CI].
+- [Travis CI] and [wercker] ready.
+- Deploy to [GitHub pages] locally or from [wrecker]
+  (or [add Travis CI deployment][travis-deploy]).
 - Optimized and tested deployment build with [HTMLMinifier].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
@@ -72,7 +75,9 @@ an instant-feedback development cycle and deployment pipeline.
 [Sass Lint]: https://github.com/sasstools/sass-lint
 [Shields.io]: http://shields.io/
 [Travis CI]: https://travis-ci.org/
+[travis-deploy]: https://gist.github.com/razor-x/a76da4b96928986776a966124a078e1d
 [UglifyJS]: https://github.com/mishoo/UglifyJS2
+[wercker]: http://wercker.com/
 [Yaml Front Matter]: https://github.com/dworthen/js-yaml-front-matter
 
 ### Bootstrapping a New Project
@@ -116,11 +121,11 @@ an instant-feedback development cycle and deployment pipeline.
 
 7. [Lock your dependencies](#updating-requirements)
    with `npm-shrinkwrap.json`.
-   Optionally, lock the Node.js version with `.nvmrc`.
+   Optionally, lock the Node.js version with `.nvmrc`
+   and in `wercker.yml`.
 
 8. Configure [deployment](#deploy-to-github-pages)
-   to GitHub pages from Travis CI.
-   See also the `TODO` in `.travis/deploy.sh`.
+   to GitHub pages from wercker and update the wercker badge.
 
 9. If hosting this as part of a larger website,
    the following boilerplate files can be removed:
@@ -292,11 +297,14 @@ Deploy the `public` directory as-is with
 $ npm run gh-pages
 ```
 
-If `SOURCE_BRANCH` is set as a Travis CI environment variable,
-then commits pushed to that branch will be deployed automatically.
-This requires `.travis/deploy.key.enc` to be encrypted on Travis,
-the corresponding decryption command in `.travis/deploy.sh`, and
-the corresponding public key added as a deploy key to the GitHub repository.
+The following environment variables can be set to customize the deploy:
+`DEPLOY_REPO`, `DEPLOY_BRANCH`, `DEPLOY_NAME`, and `DEPLOY_EMAIL`.
+
+#### Deploy from wrecker
+
+Create a new wercker SSH key with the name `DEPLOY`,
+add it to a new wercker deploy step,
+and add it to the GitHub repository as a deploy key with write access.
 
 ### Meta Data
 
