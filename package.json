@@ -1,7 +1,7 @@
 {
   "name": "makenew-tasty-brunch",
-  "description": "Demo app for Tasty Brunch.",
   "version": "1.4.0",
+  "description": "Demo app for Tasty Brunch.",
   "private": true,
   "keywords": [
     "brunch"
