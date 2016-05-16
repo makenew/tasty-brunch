@@ -13,6 +13,7 @@ const pkg = require('./package.json')
 const paths = {
   dist: 'public',
   html: 'public/**/.html',
+  images: 'public/**/*',
   scripts: 'app/**/*.js',
   styles: 'app/**/*.scss'
 }
@@ -62,6 +63,10 @@ gulp.task('watch', () => {
 })
 
 gulp.task('minify', () => {
+  gulp.src(paths.images)
+    .pipe($.imagemin())
+    .pipe(gulp.dest(paths.dist))
+
   return gulp.src(paths.html)
     .pipe($.htmlmin({
       collapseBooleanAttributes: true,
