@@ -13,7 +13,7 @@ const pkg = require('./package.json')
 
 const paths = {
   dist: 'public',
-  html: 'public/**/.html',
+  html: 'public/**/*.html',
   images: 'public/**/*',
   scripts: 'app/**/*.js',
   styles: 'app/**/*.scss'
