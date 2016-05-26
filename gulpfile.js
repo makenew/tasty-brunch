@@ -22,6 +22,7 @@ const paths = {
 gulp.task('default', ['lint', 'watch'])
 gulp.task('lint', ['standard', 'sass-lint'])
 gulp.task('minify', ['htmlmin', 'imagemin'])
+gulp.task('watch', ['watch:html', 'watch:scripts', 'watch:styles'])
 
 gulp.task('clean', () => (del(paths.dist)))
 
@@ -46,19 +47,23 @@ gulp.task('sass-lint', () => {
     .pipe($.sassLint.failOnError())
 })
 
-gulp.task('watch', () => {
-  gulp.src(paths.html)
+gulp.task('watch:html', () => {
+  return gulp.src(paths.html)
     .pipe($.watch(paths.html))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
+})
 
-  gulp.src(paths.scripts)
+gulp.task('watch:scripts', () => {
+  return gulp.src(paths.scripts)
     .pipe($.watch(paths.scripts))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
+})
 
+gulp.task('watch:styles', () => {
   return gulp.src(paths.styles)
     .pipe($.watch(paths.styles))
     .pipe($.plumber())
