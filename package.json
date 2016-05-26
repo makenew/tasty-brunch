@@ -18,7 +18,6 @@
     "start": "brunch watch --server",
     "pretest": "gulp lint",
     "test": "mocha --opts mocha.opts app/**/*.spec.js",
-    "test:watch": "gulp autotest",
     "predist": "npm test",
     "dist": "npm run build",
     "postdist": "gulp minify",

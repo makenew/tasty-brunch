@@ -143,8 +143,8 @@ $ brunch
 
 Linting, deployment, and optimization is handled by [gulp].
 
-In a separate window, use gulp to watch for changes
-and lint HTML, JavaScript, and Sass files with
+In a separate window, use gulp to watch for changes,
+run tests, and lint HTML, JavaScript, and Sass files with
 
 ```
 $ npm run watch

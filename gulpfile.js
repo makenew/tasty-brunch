@@ -23,7 +23,9 @@ const paths = {
 gulp.task('default', ['lint', 'watch'])
 gulp.task('lint', ['standard', 'sass-lint'])
 gulp.task('minify', ['htmlmin', 'imagemin'])
-gulp.task('watch', ['watch:html', 'watch:scripts', 'watch:styles'])
+gulp.task('watch', [
+  'watch:html', 'watch:scripts', 'watch:styles', 'watch:test'
+])
 
 gulp.task('clean', () => (del(paths.dist)))
 
@@ -56,7 +58,7 @@ gulp.task('test', () => {
     }))
 })
 
-gulp.task('autotest', () => {
+gulp.task('watch:test', () => {
   return gulp.watch(paths.scripts, ['test'])
 })
 
