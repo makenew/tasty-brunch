@@ -4,11 +4,8 @@ build:
   steps:
     - npm-install@1.1.4
     - maxon/npm-run@0.1.2:
-        name: build dist
+        name: dist
         script: dist
-    - maxon/npm-run@0.1.2:
-        name: minify dist
-        script: minify
 
 deploy:
   steps:
@@ -24,5 +21,5 @@ deploy:
         keyname: DEPLOY
         host: github.com
     - script:
-        name: deploy to github pages
+        name: deploy
         code: ./node_modules/gulp-cli/bin/gulp.js deploy

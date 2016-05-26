@@ -230,6 +230,31 @@ View them with
 $ npm run
 ```
 
+#### Production Build
+
+Lint, test, generate, and optimize the production build to `public` with
+
+```
+$ npm run dist
+```
+
+#### Deploy to GitHub Pages
+
+Build and deploy to GitHub Pages with
+
+```
+$ npm run deploy
+```
+
+The following environment variables can be set to customize the deploy:
+`DEPLOY_REPO`, `DEPLOY_BRANCH`, `DEPLOY_NAME`, and `DEPLOY_EMAIL`.
+
+##### Deploy from wrecker
+
+Create a new wercker SSH key with the name `DEPLOY`,
+add it to a new wercker deploy step,
+and add it to the GitHub repository as a deploy key with write access.
+
 #### Brunch
 
 [Brunch] is responsible for the development cycle
@@ -241,12 +266,6 @@ Start a local Brunch development server with
 $ npm start
 ```
 
-Run tests and generate and the production build to `public` with
-
-```
-$ npm run dist
-```
-
 If installed globally, `brunch` may be invoked directly.
 View available commands with
 
@@ -256,13 +275,13 @@ $ brunch
 
 #### gulp
 
-Linting and deployment is handled by [gulp].
+Linting, deployment, and optimization is handled by [gulp].
 
 In a separate window, use gulp to watch for changes
-and lint JavaScript and Sass files with
+and lint HTML, JavaScript, and Sass files with
 
 ```
-$ npm run lint:watch
+$ npm run watch
 ```
 
 If installed globally, `gulp` may be invoked directly.
@@ -274,38 +293,6 @@ $ gulp --tasks
 
 [Brunch]: http://brunch.io/
 [gulp]: http://gulpjs.com/
-
-#### HTMLMinifier
-
-Minify all HTML and image files in the `public` directory with
-
-```
-$ npm run minify
-```
-
-### Deploy to GitHub Pages
-
-Deploy the `public` directory to GitHub Pages with
-
-```
-$ npm run deploy
-```
-
-This will minify the HTML and images before deployment.
-Deploy the `public` directory as-is with
-
-```
-$ npm run gh-pages
-```
-
-The following environment variables can be set to customize the deploy:
-`DEPLOY_REPO`, `DEPLOY_BRANCH`, `DEPLOY_NAME`, and `DEPLOY_EMAIL`.
-
-#### Deploy from wrecker
-
-Create a new wercker SSH key with the name `DEPLOY`,
-add it to a new wercker deploy step,
-and add it to the GitHub repository as a deploy key with write access.
 
 ### Meta Data
 

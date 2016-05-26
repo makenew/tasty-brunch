@@ -3,6 +3,7 @@
 const fs = require('fs')
 const path = require('path')
 
+const del = require('del')
 const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
 const gulp = require('gulp')
@@ -20,6 +21,9 @@ const paths = {
 
 gulp.task('default', ['lint', 'watch'])
 gulp.task('lint', ['standard', 'sass-lint'])
+gulp.task('minify', ['htmlmin', 'imagemin'])
+
+gulp.task('clean', () => (del(paths.dist)))
 
 gulp.task('htmlhint', () => {
   return gulp.src(paths.html)
@@ -62,11 +66,13 @@ gulp.task('watch', () => {
     .pipe($.sassLint.format())
 })
 
-gulp.task('minify', () => {
-  gulp.src(paths.images)
+gulp.task('imagemin', () => {
+  return gulp.src(paths.images)
     .pipe($.imagemin())
     .pipe(gulp.dest(paths.dist))
+})
 
+gulp.task('htmlmin', () => {
   return gulp.src(paths.html)
     .pipe($.htmlmin({
       collapseBooleanAttributes: true,

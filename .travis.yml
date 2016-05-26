@@ -10,4 +10,3 @@ cache:
 
 script:
   - npm run dist
-  - npm run minify

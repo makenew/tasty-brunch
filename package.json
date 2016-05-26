@@ -15,19 +15,17 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "build": "del public && brunch build",
-    "clean": "del public",
-    "deploy": "gulp minify && gulp deploy",
-    "dist": "del public && npm test && brunch build -p && gulp htmlhint",
-    "gh-pages": "gulp deploy",
-    "lint": "gulp lint",
-    "lint:html": "gulp htmlhint",
-    "lint:js": "gulp standard",
-    "lint:sass": "gulp sass-lint",
-    "lint:watch": "gulp watch",
-    "minify": "gulp minify",
     "start": "brunch watch --server",
-    "pretest": "gulp lint"
+    "pretest": "gulp lint",
+    "predist": "npm test",
+    "dist": "npm run build",
+    "postdist": "gulp minify",
+    "prebuild": "gulp clean",
+    "build": "brunch build --production",
+    "postbuild": "gulp htmlhint",
+    "predeploy": "npm run dist",
+    "deploy": "gulp deploy",
+    "watch": "gulp watch"
   },
   "files": [
     "public"
