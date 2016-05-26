@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Demo app for Tasty Brunch.",
   "private": true,
   "keywords": [
@@ -15,21 +15,19 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "build": "del public && brunch build",
-    "clean": "del public",
-    "deploy": "gulp minify && gulp deploy",
-    "dist": "del public && npm test && brunch build -p && gulp htmlhint",
-    "gh-pages": "gulp deploy",
-    "lint": "gulp lint",
-    "lint:html": "gulp htmlhint",
-    "lint:js": "gulp standard",
-    "lint:sass": "gulp sass-lint",
-    "lint:watch": "gulp watch",
-    "minify": "gulp minify",
     "start": "brunch watch --server",
     "pretest": "gulp lint",
     "test": "mocha --opts mocha.opts app/**/*.spec.js",
-    "test:watch": "gulp autotest"
+    "test:watch": "gulp autotest",
+    "predist": "npm test",
+    "dist": "npm run build",
+    "postdist": "gulp minify",
+    "prebuild": "gulp clean",
+    "build": "brunch build --production",
+    "postbuild": "gulp htmlhint",
+    "predeploy": "npm run dist",
+    "deploy": "gulp deploy",
+    "watch": "gulp watch"
   },
   "files": [
     "public"

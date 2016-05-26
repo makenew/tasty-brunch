@@ -23,9 +23,8 @@ baseurl: /tasty-brunch
   </head>
   <body class="l-body">
     {{content}}
-    <script>document.documentElement.className = 'js'</script>
     {{> fonts}}
-    <script src="DIGEST(/app.js)"></script>
-    <script>require('index.js').default()</script>
+    <script src="DIGEST(/app.js)" defer></script>
+    <script src="DIGEST(/initialize.js)" defer></script>
   </body>
 </html>
