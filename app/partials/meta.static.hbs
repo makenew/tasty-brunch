@@ -37,15 +37,15 @@
 {{/if}}
 
 {{#if meta.image}}
-  <meta property="og:image" content="{{meta.image}}">
+  <meta property="og:image" content="{{url}}{{meta.image}}">
 {{/if}}
 
 {{#if meta.audio}}
-  <meta property="og:audio" content="{{meta.audio}}">
+  <meta property="og:audio" content="{{url}}{{meta.audio}}">
 {{/if}}
 
 {{#if meta.video}}
-  <meta property="og:video" content="{{meta.video}}">
+  <meta property="og:video" content="{{url}}{{meta.video}}">
 {{/if}}
 
 {{#if meta.youtube}}
