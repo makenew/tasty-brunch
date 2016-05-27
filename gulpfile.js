@@ -27,6 +27,8 @@ gulp.task('watch', [
   'watch:html', 'watch:scripts', 'watch:styles', 'watch:test'
 ])
 
+gulp.task('watch:lint', ['watch:html', 'watch:scripts', 'watch:styles'])
+
 gulp.task('clean', () => (del(paths.dist)))
 
 gulp.task('htmlhint', () => {
