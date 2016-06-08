@@ -16,11 +16,13 @@
 
 - Simple counter app built with [Redux] and [React].
 - Testing with [Mocha] and [Chai].
+- Type checking with [Flow].
 - Built on [Skeleton-Sass] with [Raleway] font loaded
   by [Web Font Loader].
 
 [Chai]: http://chaijs.com/
 [Demo app]: https://makenew.github.io/tasty-brunch/
+[Flow]: https://flowtype.org/
 [Mocha]: https://mochajs.org/
 [React]: https://facebook.github.io/react/
 [Raleway]: https://github.com/impallari/Raleway/

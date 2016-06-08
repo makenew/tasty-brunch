@@ -1,0 +1,4 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/fbjs/lib/Deferred.js.flow
+<PROJECT_ROOT>/node_modules/fbjs/lib/shallowEqual.js.flow
+<PROJECT_ROOT>/node_modules/gulp-sass-lint/teststree.json

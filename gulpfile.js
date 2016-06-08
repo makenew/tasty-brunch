@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const exec = require('child_process').exec
 
 const del = require('del')
 const gitRevSync = require('git-rev-sync')
@@ -21,13 +22,15 @@ const paths = {
 }
 
 gulp.task('default', ['lint', 'watch'])
-gulp.task('lint', ['standard', 'sass-lint'])
+gulp.task('lint', ['standard', 'sass-lint', 'flow'])
 gulp.task('minify', ['htmlmin', 'imagemin'])
 gulp.task('watch', [
-  'watch:html', 'watch:scripts', 'watch:styles', 'watch:test'
+  'watch:html', 'watch:scripts', 'watch:styles', 'watch:test', 'watch:flow'
 ])
 
-gulp.task('watch:lint', ['watch:html', 'watch:scripts', 'watch:styles'])
+gulp.task('watch:lint', [
+  'watch:html', 'watch:scripts', 'watch:styles', 'watch:flow'
+])
 
 gulp.task('clean', () => (del(paths.dist)))
 
@@ -60,8 +63,20 @@ gulp.task('test', () => {
     }))
 })
 
+gulp.task('flow', (done) => {
+  return exec('npm run flow', (err, stdout, stderr) => {
+    console.log(stdout)
+    console.log(stderr)
+    done(err)
+  })
+})
+
 gulp.task('watch:test', () => {
   return gulp.watch(paths.scripts, ['test'])
+})
+
+gulp.task('watch:flow', () => {
+  return gulp.watch(paths.scripts, ['flow'])
 })
 
 gulp.task('watch:html', () => {
