@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "dependencies": {
     "abbrev": {
       "version": "1.0.7",
@@ -2044,6 +2044,11 @@
       "version": "1.0.2",
       "from": "flatten@1.0.2",
       "resolved": "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz"
+    },
+    "flow-bin": {
+      "version": "0.26.0",
+      "from": "flow-bin@latest",
+      "resolved": "https://registry.npmjs.org/flow-bin/-/flow-bin-0.26.0.tgz"
     },
     "fn-args": {
       "version": "1.0.0",
