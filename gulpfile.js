@@ -76,7 +76,10 @@ gulp.task('watch:test', () => {
 })
 
 gulp.task('watch:flow', () => {
-  return gulp.watch(paths.scripts, ['flow'])
+  return gulp.src(paths.scripts)
+    .pipe($.watch(paths.scripts))
+    .pipe($.plumber())
+    .pipe($.flowtype())
 })
 
 gulp.task('watch:html', () => {

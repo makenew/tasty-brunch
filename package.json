@@ -63,6 +63,7 @@
     "git-rev-sync": "^1.4.0",
     "gulp": "^3.9.0",
     "gulp-cli": "^1.2.0",
+    "gulp-flowtype": "^0.4.9",
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
