@@ -15,16 +15,20 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "start": "brunch watch --server",
     "pretest": "gulp lint",
-    "predist": "npm test",
-    "dist": "npm run build",
-    "postdist": "gulp minify",
-    "prebuild": "gulp clean",
+
     "build": "brunch build --production",
-    "postbuild": "gulp htmlhint",
-    "predeploy": "npm run dist",
+      "prebuild": "gulp clean",
+      "postbuild": "gulp htmlhint",
+
+    "dist": "npm run build",
+      "predist": "npm test",
+      "postdist": "gulp minify",
+
     "deploy": "gulp deploy",
+      "predeploy": "npm run dist",
+
+    "start": "brunch watch --server",
     "watch": "gulp watch"
   },
   "files": [
