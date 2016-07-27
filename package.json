@@ -58,7 +58,7 @@
     "del-cli": "^0.2.0",
     "digest-brunch": "^1.5.1",
     "eslint": "^2.1.0",
-    "flow-bin": "^0.27.0",
+    "flow-bin": "^0.29.0",
     "gh-pages": "^0.11.0",
     "git-rev-sync": "^1.4.0",
     "gulp": "^3.9.0",
