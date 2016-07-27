@@ -12,11 +12,12 @@ const $ = require('gulp-load-plugins')()
 const pkg = require('./package.json')
 
 const paths = {
+  src: 'app',
   dist: 'public',
-  html: 'public/**/*.html',
-  images: 'public/**/*.{gif,jpg,png}',
-  scripts: 'app/**/*.js',
-  styles: 'app/**/*.scss'
+  html: `${this.dist}/**/*.html`,
+  images: `${this.dist}/**/*.{gif,jpg,png}`,
+  scripts: '${this.src}/**/*.js',
+  styles: `${this.src}/**/*.scss`
 }
 
 gulp.task('default', ['lint', 'watch'])
