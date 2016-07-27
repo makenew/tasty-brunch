@@ -10,9 +10,11 @@ window.WebFontConfig = {
 };
 
 ;(function (d) {
+  var version = '1.6.26'
   var el = d.createElement('script')
   var s = d.scripts[0]
   el.async = 1
-  el.src = 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.24/webfontloader.js'
+  el.src = 'https://cdnjs.cloudflare.com/ajax/libs/webfont/' + version +
+           '/webfontloader.js'
   s.parentNode.insertBefore(el, s)
 })(document)
