@@ -26,8 +26,8 @@ gulp.task('default', [
 ])
 
 gulp.task('lint', [
-  'sass-lint'
-  'standard',
+  'sass-lint',
+  'standard'
 ])
 
 gulp.task('minify', [
