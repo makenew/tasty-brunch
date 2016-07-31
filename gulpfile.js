@@ -16,7 +16,7 @@ const paths = {
   dist: 'public',
   html: `${this.dist}/**/*.html`,
   images: `${this.dist}/**/*.{gif,jpg,png}`,
-  scripts: '${this.src}/**/*.js',
+  scripts: `${this.src}/**/*.js`,
   styles: `${this.src}/**/*.scss`
 }
 
