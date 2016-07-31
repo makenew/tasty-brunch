@@ -11,14 +11,14 @@ const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
 
-const paths = {
-  src: 'app',
-  dist: 'public',
-  html: `${this.dist}/**/*.html`,
-  images: `${this.dist}/**/*.{gif,jpg,png}`,
-  scripts: `${this.src}/**/*.js`,
-  styles: `${this.src}/**/*.scss`
-}
+let paths = {src: 'app', dist: 'public'}
+
+paths = Object.assign(paths, {
+  html: `${paths.dist}/**/*.html`,
+  images: `${paths.dist}/**/*.{gif,jpg,png}`,
+  scripts: `${paths.src}/**/*.js`,
+  styles: `${paths.src}/**/*.scss`
+})
 
 gulp.task('default', [
   'lint',
