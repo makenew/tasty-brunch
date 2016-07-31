@@ -21,15 +21,18 @@ const paths = {
 }
 
 gulp.task('default', [
-  'lint', 'watch'
+  'lint',
+  'watch'
 ])
 
 gulp.task('lint', [
-  'standard', 'sass-lint'
+  'sass-lint'
+  'standard',
 ])
 
 gulp.task('minify', [
-  'htmlmin', 'imagemin'
+  'htmlmin',
+  'imagemin'
 ])
 
 gulp.task('watch', [
