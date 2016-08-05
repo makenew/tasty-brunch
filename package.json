@@ -15,7 +15,10 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
+    "brunch": "brunch",
     "flow": "flow",
+    "gulp": "gulp",
+    "mocha": "mocha",
 
     "test": "mocha --opts mocha.opts app/**/*.spec.js",
       "pretest": "gulp lint && flow",
