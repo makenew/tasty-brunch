@@ -28,7 +28,6 @@ gulp.task('default', [
 ])
 
 gulp.task('lint', [
-  'flow',
   'sass-lint',
   'standard'
 ])
@@ -74,14 +73,6 @@ gulp.task('test', () => {
       compilers: require('babel-core/register'),
       reporter: 'nyan'
     }))
-})
-
-gulp.task('flow', (done) => {
-  return exec('npm run flow', (err, stdout, stderr) => {
-    console.log(stdout)
-    console.log(stderr)
-    done(err)
-  })
 })
 
 gulp.task('watch:test', () => {
