@@ -12,24 +12,37 @@ const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
 
-const paths = {
-  dist: 'public',
-  html: 'public/**/*.html',
-  images: 'public/**/*.{gif,jpg,png}',
-  scripts: 'app/**/*.js',
-  spec: 'app/**/*.spec.js',
-  styles: 'app/**/*.scss'
-}
+let paths = {src: 'app', dist: 'public'}
 
-gulp.task('default', ['lint', 'watch'])
-gulp.task('lint', ['standard', 'sass-lint', 'flow'])
-gulp.task('minify', ['htmlmin', 'imagemin'])
-gulp.task('watch', [
-  'watch:html', 'watch:scripts', 'watch:styles', 'watch:test', 'watch:flow'
+paths = Object.assign(paths, {
+  html: `${paths.dist}/**/*.html`,
+  images: `${paths.dist}/**/*.{gif,jpg,png}`,
+  scripts: `${paths.src}/**/*.js`,
+  spec: `${paths.src}/**/*.spec.js`,
+  styles: `${paths.src}/**/*.scss`
+})
+
+gulp.task('default', [
+  'lint',
+  'watch'
 ])
 
-gulp.task('watch:lint', [
-  'watch:html', 'watch:scripts', 'watch:styles', 'watch:flow'
+gulp.task('lint', [
+  'flow',
+  'sass-lint',
+  'standard'
+])
+
+gulp.task('minify', [
+  'htmlmin',
+  'imagemin'
+])
+
+gulp.task('watch', [
+  'watch:flow',
+  'watch:html',
+  'watch:scripts',
+  'watch:styles'
 ])
 
 gulp.task('clean', () => (del(paths.dist)))

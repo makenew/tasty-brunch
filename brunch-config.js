@@ -14,9 +14,11 @@ exports.config = {
 
   files: {
     javascripts: {
-      joinTo: 'app.js',
+      joinTo: {
+        'vendor.js': /^vendor/
+      },
       entryPoints: {
-        'app/js/index.js': 'app.js'
+        'app/index.js': 'app.js'
       }
     },
     stylesheets: {

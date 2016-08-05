@@ -1,7 +1,7 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "1.5.2",
   "description": "Demo app for Tasty Brunch.",
+  "version": "1.6.2",
   "private": true,
   "keywords": [
     "brunch"
@@ -15,18 +15,23 @@
     "email": "razorx@evansosenko.com"
   },
   "scripts": {
-    "start": "brunch watch --server",
-    "pretest": "gulp lint",
-    "test": "mocha --opts mocha.opts app/**/*.spec.js",
-    "predist": "npm test",
-    "dist": "npm run build",
-    "postdist": "gulp minify",
-    "prebuild": "gulp clean",
-    "build": "brunch build --production",
-    "postbuild": "gulp htmlhint",
-    "predeploy": "npm run dist",
-    "deploy": "gulp deploy",
     "flow": "flow",
+
+    "test": "mocha --opts mocha.opts app/**/*.spec.js",
+      "pretest": "gulp lint",
+
+    "build": "brunch build --production",
+      "prebuild": "gulp clean",
+      "postbuild": "gulp htmlhint",
+
+    "dist": "npm run build",
+      "predist": "npm test",
+      "postdist": "gulp minify",
+
+    "deploy": "gulp deploy",
+      "predeploy": "npm run dist",
+
+    "start": "brunch watch --server",
     "watch": "gulp watch"
   },
   "files": [
@@ -76,7 +81,7 @@
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
     "mocha": "^2.4.5",
-    "postcss-brunch": "^0.5.0",
+    "postcss-brunch": "^0.6.0",
     "react-addons-test-utils": "^15.0.1",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",

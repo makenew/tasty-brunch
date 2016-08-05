@@ -1,8 +1,8 @@
 ---
 _options:
   partials:
-    - app/partials/meta.static.hbs
-    - app/partials/favicon.static.html
+    - app/static/partials/meta.static.hbs
+    - app/static/partials/favicon.static.html
 
 url: https://makenew.github.io
 baseurl: /tasty-brunch
@@ -22,6 +22,7 @@ baseurl: /tasty-brunch
   </head>
   <body class="l-body">
     {{content}}
+    <script src="DIGEST(/vendor.js)" defer></script>
     <script src="DIGEST(/app.js)" defer></script>
   </body>
 </html>
