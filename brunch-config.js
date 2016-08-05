@@ -58,10 +58,10 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
-              join (context, block) {
+              join(context, block) {
                 return context.join(block.hash.delimiter)
               },
-              updated_time () {
+              updated_time() {
                 return new Date().toISOString()
               }
             }

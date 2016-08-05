@@ -119,7 +119,8 @@ gulp.task('deploy', (done) => {
     message: `Deploy ${gitRevSync.short()} from v${pkg.version} [ci skip]`,
     repo: process.env.DEPLOY_REPO || `git@github.com:${pkg.repository}.git`,
     branch: process.env.DEPLOY_BRANCH || 'gh-pages',
-    logger: (message) => { console.log(`[ deploy ] ${message}`) },
+    logger: (message) => {
+      console.log(`[ deploy ] ${message}`)},
     user: {
       name: process.env.DEPLOY_NAME || pkg.author.name,
       email: process.env.DEPLOY_EMAIL || pkg.author.email
