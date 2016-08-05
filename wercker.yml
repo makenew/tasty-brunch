@@ -2,6 +2,8 @@ box: node:6.3.1
 
 build:
   steps:
+    - install-packages:
+        packages: libelf1 # NOTE: Required for Flow.
     - npm-install@1.1.4
     - script:
         name: dist
