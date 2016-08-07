@@ -120,7 +120,8 @@ gulp.task('deploy', (done) => {
     repo: process.env.DEPLOY_REPO || `git@github.com:${pkg.repository}.git`,
     branch: process.env.DEPLOY_BRANCH || 'gh-pages',
     logger: (message) => {
-      console.log(`[ deploy ] ${message}`)},
+      console.log(`[ deploy ] ${message}`)
+    },
     user: {
       name: process.env.DEPLOY_NAME || pkg.author.name,
       email: process.env.DEPLOY_EMAIL || pkg.author.email
