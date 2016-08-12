@@ -45,7 +45,7 @@ makenew () {
   read -p '> App name (slug): ' mk_slug
   read -p '> Short app description: ' mk_description
   read -p '> App domain (e.g., makenew.github.io): ' mk_domain
-  read -p '> App base url (e.g., / or /tasty-brunch): ' mk_baseurl
+  read -p '> App base url (leave empty or e.g., /tasty-brunch): ' mk_baseurl
   read -p '> Version number: ' mk_version
   read -p '> Author name: ' mk_author
   read -p '> Author email: ' mk_email
@@ -56,6 +56,8 @@ makenew () {
 
   sed_delete README.md '3d;14,172d;330,333d'
   sed_insert README.md '13i' "${mk_description}"
+  sed_delete brunch-config.js '38d'
+  sed_delete app/static/layouts/main.static.hbs '8d'
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -68,7 +70,11 @@ makenew () {
   find_replace "s/makenew-tasty-brunch/${mk_slug}/g"
   find_replace "s/makenew.github.io/${mk_domain}/g"
   find_replace "s/cd tasty-brunch/cd ${mk_repo}/g"
-  find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
+
+  if [ -n "$mk_baseurl" ]; then
+    sed_insert brunch-config.js '38i' "        production: '${mk_baseurl}'"
+    sed_insert app/static/layouts/main.static.hbs '8i' "baseurl: ${mk_baseurl}"
+  fi
 
   mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
   sed_insert README.md '9i' "${mk_attribution}\n"
