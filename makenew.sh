@@ -4,7 +4,18 @@ set -e
 set -u
 
 find_replace () {
-  git ls-files -z | xargs -0 sed -i "$1"
+  git grep --cached -Il '' | xargs sed -i.sedbak -e "$1"
+  find . -name "*.sedbak" -exec rm {} \;
+}
+
+sed_insert () {
+  sed -i.sedbak -e "$2\\"$'\n'"$3"$'\n' $1
+  rm $1.sedbak
+}
+
+sed_delete () {
+  sed -i.sedbak -e "$2" $1
+  rm $1.sedbak
 }
 
 check_env () {
@@ -43,8 +54,8 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed -i -e '3d;14,172d;330,333d' README.md
-  sed -i -e "13i ${mk_description}" README.md
+  sed_delete README.md '3d;14,172d;330,333d'
+  sed_insert README.md '13i' "${mk_description}"
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -60,7 +71,7 @@ makenew () {
   find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
   mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
-  sed -i -e "9i ${mk_attribution}\n" README.md
+  sed_insert README.md '9i' "${mk_attribution}\n"
 
   echo
   echo 'Replacing boilerplate.'
