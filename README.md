@@ -36,7 +36,6 @@ an instant-feedback development cycle and deployment pipeline.
 - Production assets optimized with [UglifyJS] and [cssnano].
 - Frontend and development dependency management with [npm].
 - Automatic browser reloading with [auto-reload-brunch].
-- Cache-optimized assets with [digest-brunch].
 - Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
 - Normalized element styles with [Normalize.css].
@@ -45,7 +44,8 @@ an instant-feedback development cycle and deployment pipeline.
 - [Travis CI] and [wercker] ready.
 - Deploy to [GitHub pages] locally or from [wrecker]
   (or [add Travis CI deployment][travis-deploy]).
-- Optimized and tested deployment build with [HTMLMinifier] and [imagemin].
+- Optimized and tested deployment build with
+  [gulp-rev-all], [HTMLMinifier] and [imagemin].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Badges from [Shields.io].
@@ -55,12 +55,12 @@ an instant-feedback development cycle and deployment pipeline.
 [Babel]: https://babeljs.io/
 [Brunch]: http://brunch.io/
 [cssnano]: http://cssnano.co/
-[digest-brunch]: https://github.com/mutewinter/digest-brunch
 [EditorConfig]: http://editorconfig.org/
 [ES2015 preset]: https://babeljs.io/docs/plugins/preset-es2015/
 [Favic-o-matic]: http://www.favicomatic.com/
 [GitHub pages]: https://pages.github.com/
 [gulp]: http://gulpjs.com/
+[gulp-rev-all]: https://github.com/smysnk/gulp-rev-all
 [Handlebars]: http://handlebarsjs.com/
 [html-brunch-static]: https://github.com/bmatcuk/html-brunch-static
 [HTML5 Boilerplate]: https://html5boilerplate.com/

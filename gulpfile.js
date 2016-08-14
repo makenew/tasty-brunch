@@ -13,7 +13,8 @@ const pkg = require('./package.json')
 
 let paths = {
   src: 'app',
-  dist: 'public'
+  dist: 'public',
+  build: 'build'
 }
 
 paths = Object.assign(paths, {
@@ -22,6 +23,10 @@ paths = Object.assign(paths, {
   scripts: `${paths.src}/**/*.js`,
   styles: `${paths.src}/**/*.scss`
 })
+
+const builds = {
+  client: `${paths.build}/client`
+}
 
 gulp.task('default', [
   'lint',
@@ -44,7 +49,12 @@ gulp.task('watch', [
   'watch:styles'
 ])
 
-gulp.task('clean', () => (del(paths.dist)))
+gulp.task('clean', () => (
+  del([
+    paths.build,
+    paths.dist
+  ])
+))
 
 gulp.task('htmlhint', () => (
   gulp.src(paths.html)
@@ -112,10 +122,30 @@ gulp.task('htmlmin', () => (
     .pipe(gulp.dest(paths.dist))
 ))
 
-gulp.task('deploy', (done) => {
-  fs.openSync(path.join(paths.dist, '.nojekyll'), 'w')
+gulp.task('rev', () => {
+  const dontRev = [
+    '404.html',
+    'index.html',
+    'humans.txt',
+    'robots.txt',
+    'crossdomain.xml'
+  ]
 
-  return ghpages.publish(paths.dist, {
+  const revAll = new $.revAll({ // eslint-disable-line new-cap
+    prefix: '/tasty-brunch',
+    dontRenameFile: dontRev,
+    dontUpdateReference: dontRev
+  })
+
+  return gulp.src(`${paths.dist}/**`)
+    .pipe(revAll.revision())
+    .pipe(gulp.dest(builds.client))
+})
+
+gulp.task('deploy', ['rev'], (done) => {
+  fs.openSync(path.join(builds.client, '.nojekyll'), 'w')
+
+  return ghpages.publish(builds.client, {
     clone: '.deploy',
     depth: 2,
     dotfiles: true,

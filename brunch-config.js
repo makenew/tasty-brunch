@@ -33,13 +33,6 @@ exports.config = {
   },
 
   plugins: {
-    digest: {
-      prependHost: {
-        production: '/tasty-brunch'
-      },
-      referenceFiles: /\.(css|html|js)$/
-    },
-
     postcss: {
       processors: [
         require('autoprefixer')

@@ -56,7 +56,7 @@ makenew () {
 
   sed_delete README.md '3d;14,172d;330,333d'
   sed_insert README.md '13i' "${mk_description}"
-  sed_delete brunch-config.js '38d'
+  sed_delete gulpfile.js '136d'
   sed_delete app/static/layouts/main.static.hbs '8d'
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
@@ -72,7 +72,7 @@ makenew () {
   find_replace "s/cd tasty-brunch/cd ${mk_repo}/g"
 
   if [ -n "$mk_baseurl" ]; then
-    sed_insert brunch-config.js '38i' "        production: '${mk_baseurl}'"
+    sed_insert gulpfile.js '136i' "    prefix: '${mk_baseurl}',"
     sed_insert app/static/layouts/main.static.hbs '8i' "baseurl: ${mk_baseurl}"
   fi
 
