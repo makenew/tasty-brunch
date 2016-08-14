@@ -54,7 +54,7 @@ makenew () {
   read -p '> GitHub user or organization name: ' mk_user
   read -p '> GitHub repository name: ' mk_repo
 
-  sed_delete README.md '3d;14,172d;330,333d'
+  sed_delete README.md '3d;14,173d;331,334d'
   sed_insert README.md '13i' "${mk_description}"
   sed_delete gulpfile.js '136d'
   sed_delete app/static/layouts/main.static.hbs '8d'

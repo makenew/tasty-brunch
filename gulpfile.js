@@ -128,7 +128,8 @@ gulp.task('rev', () => {
     'index.html',
     'humans.txt',
     'robots.txt',
-    'crossdomain.xml'
+    'crossdomain.xml',
+    'image.png'
   ]
 
   const revAll = new $.revAll({ // eslint-disable-line new-cap
