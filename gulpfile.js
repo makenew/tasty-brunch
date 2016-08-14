@@ -46,59 +46,59 @@ gulp.task('watch', [
 
 gulp.task('clean', () => (del(paths.dist)))
 
-gulp.task('htmlhint', () => {
-  return gulp.src(paths.html)
+gulp.task('htmlhint', () => (
+  gulp.src(paths.html)
     .pipe($.htmlhint())
     .pipe($.htmlhint.failReporter())
-})
+))
 
-gulp.task('standard', () => {
-  return gulp.src(paths.scripts)
+gulp.task('standard', () => (
+  gulp.src(paths.scripts)
     .pipe($.standard())
     .pipe($.standard.reporter('default', {
       breakOnError: true
     }))
-})
+))
 
-gulp.task('sass-lint', () => {
-  return gulp.src(paths.styles)
+gulp.task('sass-lint', () => (
+  gulp.src(paths.styles)
     .pipe($.sassLint())
     .pipe($.sassLint.format())
     .pipe($.sassLint.failOnError())
-})
+))
 
-gulp.task('watch:html', () => {
-  return gulp.src(paths.html)
+gulp.task('watch:html', () => (
+  gulp.src(paths.html)
     .pipe($.watch(paths.html))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
-})
+))
 
-gulp.task('watch:scripts', () => {
-  return gulp.src(paths.scripts)
+gulp.task('watch:scripts', () => (
+  gulp.src(paths.scripts)
     .pipe($.watch(paths.scripts))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
-})
+))
 
-gulp.task('watch:styles', () => {
-  return gulp.src(paths.styles)
+gulp.task('watch:styles', () => (
+  gulp.src(paths.styles)
     .pipe($.watch(paths.styles))
     .pipe($.plumber())
     .pipe($.sassLint())
     .pipe($.sassLint.format())
-})
+))
 
-gulp.task('imagemin', () => {
-  return gulp.src(paths.images)
+gulp.task('imagemin', () => (
+  gulp.src(paths.images)
     .pipe($.imagemin())
     .pipe(gulp.dest(paths.dist))
-})
+))
 
-gulp.task('htmlmin', () => {
-  return gulp.src(paths.html)
+gulp.task('htmlmin', () => (
+  gulp.src(paths.html)
     .pipe($.htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
@@ -110,7 +110,7 @@ gulp.task('htmlmin', () => {
       minifyJS: true
     }))
     .pipe(gulp.dest(paths.dist))
-})
+))
 
 gulp.task('deploy', (done) => {
   fs.openSync(path.join(paths.dist, '.nojekyll'), 'w')
