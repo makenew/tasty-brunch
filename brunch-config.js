@@ -40,13 +40,6 @@ exports.config = {
   },
 
   plugins: {
-    digest: {
-      prependHost: {
-        production: '/tasty-brunch'
-      },
-      referenceFiles: /\.(css|html|js)$/
-    },
-
     postcss: {
       processors: [
         require('autoprefixer')
@@ -65,10 +58,10 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
-              join(context, block) {
+              join (context, block) {
                 return context.join(block.hash.delimiter)
               },
-              updated_time() {
+              updated_time () {
                 return new Date().toISOString()
               }
             }

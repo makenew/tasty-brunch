@@ -169,11 +169,11 @@ Meta data is defined in `app/index.static.hbs`.
 - Nil values are indicated by a `~`.
   Nil fields never generate a meta tag.
   Fields which are Nil by default are generally optional.
-- The `image`, `audio`, and `video` fields must be given
-  as a fully qualified url.
-  The recommended way to specify this value is with `DIGEST`, e.g.,
-  assuming `app/assets/images/logo.png` exists,
-  use `image: DIGEST(/images/logo.png)`.
+- The `image`, `audio`, and `video` fields must result in a fully qualified url.
+  This is handled for local files automatically, but you must also include
+  add the file to `dontRev` in `gulpfile.js`.
+  For externally hosted files, you must modify
+  `app/static/partials/meta.static.hbs`
 - Instead of the `video` field, you may specify a `youtube` video id.
 - The `twitter` fields are used for [Twitter Cards], but you must
   enable them for your domain with Twitter first.

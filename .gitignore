@@ -8,7 +8,8 @@
 # Deploy directory
 .deploy
 
-# Build directory
+# Build directories
+build
 public
 
 # Logs
