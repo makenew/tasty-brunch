@@ -56,8 +56,6 @@ makenew () {
 
   sed_delete README.md '3d;14,173d;331,334d'
   sed_insert README.md '13i' "${mk_description}"
-  sed_delete gulpfile.js '136d'
-  sed_delete app/static/layouts/main.static.hbs '8d'
 
   find_replace "s/version\": \".*\"/version\": \"${mk_version}\"/g"
   find_replace "s/0\.0\.0\.\.\./${mk_version}.../g"
@@ -68,13 +66,9 @@ makenew () {
   find_replace "s/razorx@evansosenko\.com/${mk_email}/g"
   find_replace "s/makenew\/tasty-brunch/${mk_user}\/${mk_repo}/g"
   find_replace "s/makenew-tasty-brunch/${mk_slug}/g"
-  find_replace "s/makenew.github.io/${mk_domain}/g"
   find_replace "s/cd tasty-brunch/cd ${mk_repo}/g"
-
-  if [ -n "$mk_baseurl" ]; then
-    sed_insert gulpfile.js '136i' "    prefix: '${mk_baseurl}',"
-    sed_insert app/static/layouts/main.static.hbs '8i' "baseurl: ${mk_baseurl}"
-  fi
+  find_replace "s/makenew.github.io/${mk_domain}/g"
+  find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
   mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
   sed_insert README.md '9i' "${mk_attribution}\n"

@@ -51,6 +51,11 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
+              urlprefix () {
+                const url = process.env.DOMAIN || 'makenew.github.io'
+                const baseurl = process.env.BASEURL || '/tasty-brunch'
+                return `https://${url}${baseurl}`
+              },
               join (context, block) {
                 return context.join(block.hash.delimiter)
               },
