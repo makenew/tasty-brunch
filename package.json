@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Demo app for Tasty Brunch.",
   "private": true,
   "keywords": [
@@ -29,7 +29,7 @@
 
     "dist": "npm run build",
       "predist": "npm test",
-      "postdist": "gulp minify",
+      "postdist": "gulp rev",
 
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",

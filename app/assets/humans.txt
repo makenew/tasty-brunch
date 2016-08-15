@@ -3,7 +3,6 @@ Author: Evan Sosenko
 Email: razorx@evansosenko.com
 
 /* SITE */
-URL: https://makenew.github.io/tasty-brunch/
 Source: https://github.com/makenew/tasty-brunch
 
 /* LIBRARIES */

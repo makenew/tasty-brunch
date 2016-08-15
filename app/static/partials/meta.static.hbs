@@ -9,8 +9,8 @@
 {{/if}}
 
 {{#if meta.canonical}}
-  <link rel="canonical" href="{{url}}{{baseurl}}{{meta.canonical}}">
-  <meta property="og:url" content="{{url}}{{baseurl}}{{meta.canonical}}">
+  <link rel="canonical" href="{{urlprefix}}{{meta.canonical}}">
+  <meta property="og:url" content="{{urlprefix}}{{meta.canonical}}">
 {{/if}}
 
 <meta property="og:updated_time" content="{{updated_time}}">
@@ -37,15 +37,15 @@
 {{/if}}
 
 {{#if meta.image}}
-  <meta property="og:image" content="{{url}}{{meta.image}}">
+  <meta property="og:image" content="{{urlprefix}}{{meta.image}}">
 {{/if}}
 
 {{#if meta.audio}}
-  <meta property="og:audio" content="{{url}}{{meta.audio}}">
+  <meta property="og:audio" content="{{urlprefix}}{{meta.audio}}">
 {{/if}}
 
 {{#if meta.video}}
-  <meta property="og:video" content="{{url}}{{meta.video}}">
+  <meta property="og:video" content="{{urlprefix}}{{meta.video}}">
 {{/if}}
 
 {{#if meta.youtube}}

@@ -9,7 +9,7 @@
 .deploy
 
 # Build directories
-build
+dist
 public
 
 # Logs

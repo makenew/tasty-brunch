@@ -14,20 +14,20 @@ const pkg = require('./package.json')
 
 let paths = {
   src: 'app',
-  dist: 'public',
-  build: 'build'
+  build: 'public',
+  dist: 'dist'
 }
 
 paths = Object.assign(paths, {
-  html: `${paths.dist}/**/*.html`,
-  images: `${paths.dist}/**/*.{gif,jpg,png}`,
+  html: `${paths.build}/**/*.html`,
+  images: `${paths.build}/**/*.{gif,jpg,png}`,
   scripts: `${paths.src}/**/*.js`,
   spec: `${paths.src}/**/*.spec.js`,
   styles: `${paths.src}/**/*.scss`
 })
 
-const builds = {
-  client: `${paths.build}/client`
+const dist = {
+  client: `${paths.dist}/client`
 }
 
 gulp.task('default', [
@@ -126,7 +126,7 @@ gulp.task('watch:styles', () => (
 gulp.task('imagemin', () => (
   gulp.src(paths.images)
     .pipe($.imagemin())
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.build))
 ))
 
 gulp.task('htmlmin', () => (
@@ -141,10 +141,10 @@ gulp.task('htmlmin', () => (
       minifyCSS: true,
       minifyJS: true
     }))
-    .pipe(gulp.dest(paths.dist))
+    .pipe(gulp.dest(paths.build))
 ))
 
-gulp.task('rev', () => {
+gulp.task('rev', ['minify'], () => {
   const dontRev = [
     '404.html',
     'index.html',
@@ -155,20 +155,20 @@ gulp.task('rev', () => {
   ]
 
   const revAll = new $.revAll({ // eslint-disable-line new-cap
-    prefix: '/tasty-brunch',
+    prefix: process.env.ASSET_PREFIX || '/tasty-brunch',
     dontRenameFile: dontRev,
     dontUpdateReference: dontRev
   })
 
-  return gulp.src(`${paths.dist}/**`)
+  return gulp.src(`${paths.build}/**`)
     .pipe(revAll.revision())
-    .pipe(gulp.dest(builds.client))
+    .pipe(gulp.dest(dist.client))
 })
 
-gulp.task('deploy', ['rev'], (done) => {
-  fs.openSync(path.join(builds.client, '.nojekyll'), 'w')
+gulp.task('deploy', (done) => {
+  fs.openSync(path.join(dist.client, '.nojekyll'), 'w')
 
-  return ghpages.publish(builds.client, {
+  return ghpages.publish(dist.client, {
     clone: '.deploy',
     depth: 2,
     dotfiles: true,
