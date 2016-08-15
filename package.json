@@ -24,7 +24,7 @@
 
     "dist": "npm run build",
       "predist": "npm test",
-      "postdist": "gulp minify",
+      "postdist": "gulp rev",
 
     "deploy": "gulp deploy",
       "predeploy": "npm run dist",
