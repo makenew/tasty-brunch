@@ -60,7 +60,9 @@ exports.config = {
             helpers: {
               urlprefix () {
                 const url = process.env.DOMAIN || 'makenew.github.io'
-                const baseurl = process.env.BASEURL || '/tasty-brunch'
+                const baseurl = typeof process.env.BASEURL === 'string'
+                  ? process.env.BASEURL
+                  : '/tasty-brunch'
                 return `https://${url}${baseurl}`
               },
               join (context, block) {
