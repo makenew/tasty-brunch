@@ -51,7 +51,7 @@
     "brunch-static": "^1.1.1",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
-    "eslint": "^2.1.0",
+    "eslint": "^3.3.1",
     "gh-pages": "^0.11.0",
     "git-rev-sync": "^1.4.0",
     "gulp": "^3.9.0",
@@ -63,14 +63,14 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rev-all": "^0.8.24",
     "gulp-sass-lint": "^1.1.1",
-    "gulp-standard": "^7.0.1",
+    "gulp-standard": "^8.0.0",
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^2.0.1",
     "sass-brunch": "^2.0.0",
     "sass-lint": "^1.5.0",
-    "standard": "^7.0.1",
+    "standard": "^8.0.0",
     "uglify-js-brunch": "^2.0.1"
   }
 }
