@@ -171,7 +171,7 @@ Meta data is defined in `app/index.static.hbs`.
   Fields which are Nil by default are generally optional.
 - The `image`, `audio`, and `video` fields must result in a fully qualified url.
   This is handled for local files automatically, but you must also include
-  add the file to `dontRev` in `gulpfile.js`.
+  the file in the array `dontRev` in `gulpfile.js`.
   For externally hosted files, you must modify
   `app/static/partials/meta.static.hbs`
 - Instead of the `video` field, you may specify a `youtube` video id.
