@@ -2001,9 +2001,9 @@
       "resolved": "https://registry.npmjs.org/flatten/-/flatten-1.0.2.tgz"
     },
     "flow-bin": {
-      "version": "0.30.0",
-      "from": "flow-bin@>=0.30.0 <0.31.0",
-      "resolved": "https://registry.npmjs.org/flow-bin/-/flow-bin-0.30.0.tgz"
+      "version": "0.31.1",
+      "from": "flow-bin@>=0.31.0 <0.32.0",
+      "resolved": "https://registry.npmjs.org/flow-bin/-/flow-bin-0.31.1.tgz"
     },
     "flow-reporter": {
       "version": "0.1.0",
@@ -2386,6 +2386,11 @@
       "from": "gulp-flowtype@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/gulp-flowtype/-/gulp-flowtype-1.0.0.tgz",
       "dependencies": {
+        "flow-bin": {
+          "version": "0.30.0",
+          "from": "flow-bin@>=0.30.0 <0.31.0",
+          "resolved": "https://registry.npmjs.org/flow-bin/-/flow-bin-0.30.0.tgz"
+        },
         "readable-stream": {
           "version": "2.0.6",
           "from": "readable-stream@>=2.0.0 <2.1.0",
