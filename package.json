@@ -33,6 +33,7 @@
     "watch": "gulp watch"
   },
   "files": [
+    "dist",
     "public"
   ],
   "dependencies": {
