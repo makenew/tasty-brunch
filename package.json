@@ -1,6 +1,6 @@
 {
   "name": "makenew-tasty-brunch",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Demo app for Tasty Brunch.",
   "private": true,
   "keywords": [
@@ -38,6 +38,7 @@
     "watch": "gulp watch"
   },
   "files": [
+    "dist",
     "public"
   ],
   "dependencies": {
