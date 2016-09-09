@@ -6,6 +6,7 @@ const path = require('path')
 const del = require('del')
 const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
+const runSequence = require('run-sequence')
 const gulp = require('gulp')
 const $ = require('gulp-load-plugins')()
 
@@ -42,6 +43,13 @@ gulp.task('minify', [
   'htmlmin',
   'imagemin'
 ])
+
+gulp.task('optimize', (done) => (
+  runSequence(
+    'minify',
+    'rev'
+  )
+))
 
 gulp.task('watch', [
   'watch:html',
@@ -122,7 +130,7 @@ gulp.task('htmlmin', () => (
     .pipe(gulp.dest(paths.build))
 ))
 
-gulp.task('rev', ['minify'], () => {
+gulp.task('rev', () => {
   const dontRev = [
     '404.html',
     'index.html',
