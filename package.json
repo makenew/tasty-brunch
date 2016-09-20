@@ -45,7 +45,7 @@
     "public"
   ],
   "dependencies": {
-    "normalize.css": "^4.0.0"
+    "sanitize.css": "^4.1.0"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.1.0",

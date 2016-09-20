@@ -38,7 +38,7 @@ an instant-feedback development cycle and deployment pipeline.
 - Automatic browser reloading with [auto-reload-brunch].
 - Linting with the [JavaScript Standard Style], [stylelint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
-- Normalized element styles with [Normalize.css].
+- Standardized element styles with [sanitize.css].
 - Favicons with [Favic-o-matic].
 - The internet is for humans with [humans.txt].
 - [Travis CI] and [wercker] ready.
@@ -71,8 +71,8 @@ an instant-feedback development cycle and deployment pipeline.
 [JavaScript Standard Style]: http://standardjs.com/
 [Keep a CHANGELOG]: http://keepachangelog.com/
 [npm]: https://www.npmjs.com/
-[Normalize.css]: https://necolas.github.io/normalize.css/
 [PostCSS]: http://postcss.org/
+[sanitize.css]: https://jonathantneal.github.io/sanitize.css/
 [Shields.io]: http://shields.io/
 [stylelint]: http://stylelint.io/
 [Travis CI]: https://travis-ci.org/

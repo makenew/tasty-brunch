@@ -1,7 +1,7 @@
 exports.config = {
   npm: {
     styles: {
-      'normalize.css': ['normalize.css']
+      'sanitize.css': ['sanitize.css']
     }
   },
 
