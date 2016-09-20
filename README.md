@@ -124,7 +124,7 @@ an instant-feedback development cycle and deployment pipeline.
 7. [Lock your dependencies](#updating-requirements)
    with `npm-shrinkwrap.json`.
    Optionally, lock the Node.js version with `.nvmrc`
-   and in `wercker.yml`.
+   `engines` in `package.json`, and in `wercker.yml`.
 
 8. Configure [deployment](#deploy-to-github-pages)
    to GitHub pages from wercker and update the wercker badge.
