@@ -22,7 +22,7 @@ paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
   scripts: `${paths.src}/**/*.js`,
-  styles: `${paths.src}/**/*.scss`
+  styles: `${paths.src}/**/*.css`
 })
 
 const dist = {
@@ -35,7 +35,7 @@ gulp.task('default', [
 ])
 
 gulp.task('lint', [
-  'sass-lint',
+  'stylelint',
   'standard'
 ])
 
@@ -78,11 +78,13 @@ gulp.task('standard', () => (
     }))
 ))
 
-gulp.task('sass-lint', () => (
+gulp.task('stylelint', () => (
   gulp.src(paths.styles)
-    .pipe($.sassLint())
-    .pipe($.sassLint.format())
-    .pipe($.sassLint.failOnError())
+    .pipe($.stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }))
 ))
 
 gulp.task('watch:html', () => (
@@ -102,11 +104,7 @@ gulp.task('watch:scripts', () => (
 ))
 
 gulp.task('watch:styles', () => (
-  gulp.src(paths.styles)
-    .pipe($.watch(paths.styles))
-    .pipe($.plumber())
-    .pipe($.sassLint())
-    .pipe($.sassLint.format())
+  gulp.watch(paths.styles, ['stylelint'])
 ))
 
 gulp.task('imagemin', () => (

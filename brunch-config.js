@@ -19,30 +19,11 @@ exports.config = {
     }
   },
 
-  overrides: {
-    production: {
-      plugins: {
-        postcss: {
-          processors: [
-            require('autoprefixer'),
-            require('cssnano')
-          ]
-        }
-      }
-    }
-  },
-
   plugins: {
     postcss: {
       processors: [
         require('autoprefixer')
       ]
-    },
-
-    sass: {
-      options: {
-        includePaths: ['node_modules']
-      }
     },
 
     static: {

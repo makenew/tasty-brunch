@@ -32,6 +32,9 @@
     "start": "brunch watch --server",
     "watch": "gulp watch"
   },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
   "files": [
     "dist",
     "public"
@@ -45,6 +48,7 @@
     "babel-brunch": "^6.0.6",
     "brunch": "^2.5.2",
     "brunch-static": "^1.1.1",
+    "clean-css-brunch": "^2.0.0",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "gh-pages": "^0.11.0",
@@ -57,14 +61,15 @@
     "gulp-load-plugins": "^1.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rev-all": "^0.8.24",
-    "gulp-sass-lint": "^1.1.1",
     "gulp-standard": "^8.0.0",
+    "gulp-stylelint": "^3.2.0",
     "gulp-watch": "^4.3.5",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^2.0.1",
     "run-sequence": "^1.2.2",
-    "sass-brunch": "^2.0.0",
+    "stylefmt": "^4.3.1",
+    "stylelint-config-standard": "^13.0.0",
     "uglify-js-brunch": "^2.0.1"
   }
 }

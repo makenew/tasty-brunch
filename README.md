@@ -32,11 +32,11 @@ an instant-feedback development cycle and deployment pipeline.
   [Handlebars], and [Yaml Front Matter].
 - Extensive intelligent meta tag support.
 - Write modern JavaScript with [Babel] and the [ES2015 preset].
-- Write styles with [Sass] and [Autoprefixer].
-- Production assets optimized with [UglifyJS] and [cssnano].
+- Write styles with [PostCSS] and [Autoprefixer].
+- Production assets optimized with [UglifyJS] and [clean-css].
 - Frontend and development dependency management with [npm].
 - Automatic browser reloading with [auto-reload-brunch].
-- Linting with the [JavaScript Standard Style], [Sass Lint], and [HTMLHint].
+- Linting with the [JavaScript Standard Style], [stylelint], and [HTMLHint].
 - Automatically lint on changes with [gulp].
 - Normalized element styles with [Normalize.css].
 - Favicons with [Favic-o-matic].
@@ -54,7 +54,7 @@ an instant-feedback development cycle and deployment pipeline.
 [Autoprefixer]: https://github.com/postcss/autoprefixer
 [Babel]: https://babeljs.io/
 [Brunch]: http://brunch.io/
-[cssnano]: http://cssnano.co/
+[clean-css]: https://github.com/jakubpawlowicz/clean-css
 [EditorConfig]: http://editorconfig.org/
 [ES2015 preset]: https://babeljs.io/docs/plugins/preset-es2015/
 [Favic-o-matic]: http://www.favicomatic.com/
@@ -72,9 +72,9 @@ an instant-feedback development cycle and deployment pipeline.
 [Keep a CHANGELOG]: http://keepachangelog.com/
 [npm]: https://www.npmjs.com/
 [Normalize.css]: https://necolas.github.io/normalize.css/
-[Sass]: http://sass-lang.com/
-[Sass Lint]: https://github.com/sasstools/sass-lint
+[PostCSS]: http://postcss.org/
 [Shields.io]: http://shields.io/
+[stylelint]: http://stylelint.io/
 [Travis CI]: https://travis-ci.org/
 [travis-deploy]: https://gist.github.com/razor-x/a76da4b96928986776a966124a078e1d
 [UglifyJS]: https://github.com/mishoo/UglifyJS2
@@ -279,7 +279,7 @@ $ brunch
 Linting, deployment, and optimization is handled by [gulp].
 
 In a separate window, use gulp to watch for changes
-and lint HTML, JavaScript, and Sass files with
+and lint HTML, JavaScript, and CSS files with
 
 ```
 $ npm run watch
