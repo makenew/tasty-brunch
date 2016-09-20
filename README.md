@@ -210,16 +210,9 @@ $ npm install
 #### Updating requirements
 
 Requirements are version-locked to ensure consistent deploys.
+See the [npm-shrinkwrap] documentation for dependency management.
 
-To use the newest allowed Node packages,
-or after updating any package versions in `package.json`,
-update and stage `npm-shrinkwrap.json` with
-
-```
-$ npm update
-$ npm shrinkwrap --dev
-$ git add npm-shrinkwrap.json
-```
+[npm-shrinkwrap]: https://docs.npmjs.com/cli/shrinkwrap
 
 ### Tasks
 
