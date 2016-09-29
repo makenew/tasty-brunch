@@ -138,16 +138,14 @@ gulp.task('rev', () => {
     'image.png'
   ]
 
-  const revAll = new $.revAll({ // eslint-disable-line new-cap
-    prefix: typeof process.env.ASSET_PREFIX === 'string'
-      ? process.env.ASSET_PREFIX
-      : '/tasty-brunch',
-    dontRenameFile: dontRev,
-    dontUpdateReference: dontRev
-  })
-
   return gulp.src(`${paths.build}/**`)
-    .pipe(revAll.revision())
+    .pipe($.revAll.revision({
+      prefix: typeof process.env.ASSET_PREFIX === 'string'
+        ? process.env.ASSET_PREFIX
+        : '/tasty-brunch',
+      dontRenameFile: dontRev,
+      dontUpdateReference: dontRev
+    }))
     .pipe(gulp.dest(dist.client))
 })
 
