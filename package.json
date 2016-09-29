@@ -54,7 +54,7 @@
     "brunch": "^2.5.2",
     "brunch-static": "^1.1.1",
     "clean-css-brunch": "^2.0.0",
-    "concurrently": "^2.2.0",
+    "concurrently": "^3.0.0",
     "cssnano": "^3.4.0",
     "del-cli": "^0.2.0",
     "gh-pages": "^0.11.0",
