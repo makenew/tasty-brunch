@@ -6,4 +6,4 @@ Email: razorx@evansosenko.com
 Source: https://github.com/makenew/tasty-brunch
 
 /* LIBRARIES */
-https://necolas.github.io/normalize.css/
+https://jonathantneal.github.io/sanitize.css/

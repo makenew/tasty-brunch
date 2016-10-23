@@ -1,10 +1,4 @@
 exports.config = {
-  npm: {
-    styles: {
-      'normalize.css': ['normalize.css']
-    }
-  },
-
   conventions: {
     ignored: [
       /[\\/]_/,
@@ -26,30 +20,12 @@ exports.config = {
     }
   },
 
-  overrides: {
-    production: {
-      plugins: {
-        postcss: {
-          processors: [
-            require('autoprefixer'),
-            require('cssnano')
-          ]
-        }
-      }
-    }
-  },
-
   plugins: {
     postcss: {
       processors: [
-        require('autoprefixer')
+        require('postcss-import')(),
+        require('postcss-cssnext')()
       ]
-    },
-
-    sass: {
-      options: {
-        includePaths: ['node_modules']
-      }
     },
 
     static: {

@@ -7,7 +7,9 @@ const exec = require('child_process').exec
 const del = require('del')
 const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
+const runSequence = require('run-sequence')
 const gulp = require('gulp')
+const gulplog = require('gulplog')
 const $ = require('gulp-load-plugins')()
 
 const pkg = require('./package.json')
@@ -21,9 +23,13 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `${paths.src}/**/*.js`,
+  styles: `${paths.src}/**/*.css`,
   spec: `${paths.src}/**/*.spec.js`,
-  styles: `${paths.src}/**/*.scss`
+  scripts: [
+    '*.js',
+    'vendor/initialize.js',
+    `${paths.src}/**/*.js`
+  ]
 })
 
 const dist = {
@@ -36,7 +42,7 @@ gulp.task('default', [
 ])
 
 gulp.task('lint', [
-  'sass-lint',
+  'stylelint',
   'standard'
 ])
 
@@ -44,6 +50,13 @@ gulp.task('minify', [
   'htmlmin',
   'imagemin'
 ])
+
+gulp.task('optimize', (done) => (
+  runSequence(
+    'minify',
+    'rev'
+  )
+))
 
 gulp.task('watch', [
   'watch:flow',
@@ -73,11 +86,13 @@ gulp.task('standard', () => (
     }))
 ))
 
-gulp.task('sass-lint', () => (
+gulp.task('stylelint', () => (
   gulp.src(paths.styles)
-    .pipe($.sassLint())
-    .pipe($.sassLint.format())
-    .pipe($.sassLint.failOnError())
+    .pipe($.stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }))
 ))
 
 gulp.task('test', () => (
@@ -101,7 +116,11 @@ gulp.task('watch:flow', () => (
 
 gulp.task('watch:html', () => (
   gulp.src(paths.html)
-    .pipe($.watch(paths.html))
+    .pipe($.watch(paths.html, vinyl => {
+      if (vinyl.event === 'change') {
+        gulplog.info(`Linted ${vinyl.relative}`)
+      }
+    }))
     .pipe($.plumber())
     .pipe($.htmlhint())
     .pipe($.htmlhint.reporter())
@@ -109,18 +128,18 @@ gulp.task('watch:html', () => (
 
 gulp.task('watch:scripts', () => (
   gulp.src(paths.scripts)
-    .pipe($.watch(paths.scripts))
+    .pipe($.watch(paths.scripts, vinyl => {
+      if (vinyl.event === 'change') {
+        gulplog.info(`Linted ${vinyl.relative}`)
+      }
+    }))
     .pipe($.plumber())
     .pipe($.standard())
     .pipe($.standard.reporter('default'))
 ))
 
 gulp.task('watch:styles', () => (
-  gulp.src(paths.styles)
-    .pipe($.watch(paths.styles))
-    .pipe($.plumber())
-    .pipe($.sassLint())
-    .pipe($.sassLint.format())
+  gulp.watch(paths.styles, ['stylelint'])
 ))
 
 gulp.task('imagemin', () => (
@@ -144,7 +163,7 @@ gulp.task('htmlmin', () => (
     .pipe(gulp.dest(paths.build))
 ))
 
-gulp.task('rev', ['minify'], () => {
+gulp.task('rev', () => {
   const dontRev = [
     '404.html',
     'index.html',
@@ -154,16 +173,14 @@ gulp.task('rev', ['minify'], () => {
     'image.png'
   ]
 
-  const revAll = new $.revAll({ // eslint-disable-line new-cap
-    prefix: typeof process.env.ASSET_PREFIX === 'string'
-      ? process.env.ASSET_PREFIX
-      : '/tasty-brunch',
-    dontRenameFile: dontRev,
-    dontUpdateReference: dontRev
-  })
-
   return gulp.src(`${paths.build}/**`)
-    .pipe(revAll.revision())
+    .pipe($.revAll.revision({
+      prefix: typeof process.env.ASSET_PREFIX === 'string'
+        ? process.env.ASSET_PREFIX
+        : '/tasty-brunch',
+      dontRenameFile: dontRev,
+      dontUpdateReference: dontRev
+    }))
     .pipe(gulp.dest(dist.client))
 })
 

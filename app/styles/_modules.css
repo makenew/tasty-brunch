@@ -1,20 +1,20 @@
 .title {
   text-align: center;
 
-  > h1 {
+  & > h1 {
     font-size: 3rem;
     margin-bottom: 0;
 
-    @media (#{$bp-larger-than-phablet}) {
+    @media (min-width: 550px) {
       font-size: 5.8rem;
     }
   }
 
-  > p {
+  & > p {
     font-size: 2rem;
   }
 
-  > a {
+  & > a {
     background-position: center left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -27,7 +27,7 @@
 .external {
   padding-left: 0;
 
-  > li {
+  & > li {
     display: inline-block;
     font-size: 2rem;
     margin: .5rem;

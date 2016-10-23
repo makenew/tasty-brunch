@@ -5,12 +5,12 @@
   font-family: 'Source Code Pro', monospace;
   justify-content: center;
 
-  p {
+  & p {
     font-size: 9rem;
     margin-bottom: 0;
   }
 
-  button {
+  & button {
     font-size: 7rem;
     height: initial;
     line-height: inherit;
