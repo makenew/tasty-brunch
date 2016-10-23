@@ -70,6 +70,7 @@
     "gulp-standard": "^8.0.0",
     "gulp-stylelint": "^3.2.0",
     "gulp-watch": "^4.3.5",
+    "gulplog": "^1.0.0",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "^2.0.1",
