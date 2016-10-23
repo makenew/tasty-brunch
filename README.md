@@ -32,7 +32,7 @@ an instant-feedback development cycle and deployment pipeline.
   [Handlebars], and [Yaml Front Matter].
 - Extensive intelligent meta tag support.
 - Write modern JavaScript with [Babel] and the [ES2015 preset].
-- Write styles with [PostCSS] and [Autoprefixer].
+- Write styles with [PostCSS], [postcss-import], and [PostCSS-cssnext].
 - Production assets optimized with [UglifyJS] and [clean-css].
 - Frontend and development dependency management with [npm].
 - Automatic browser reloading with [auto-reload-brunch].
@@ -51,7 +51,6 @@ an instant-feedback development cycle and deployment pipeline.
 - Badges from [Shields.io].
 
 [auto-reload-brunch]: https://github.com/brunch/auto-reload-brunch
-[Autoprefixer]: https://github.com/postcss/autoprefixer
 [Babel]: https://babeljs.io/
 [Brunch]: http://brunch.io/
 [clean-css]: https://github.com/jakubpawlowicz/clean-css
@@ -72,6 +71,8 @@ an instant-feedback development cycle and deployment pipeline.
 [Keep a CHANGELOG]: http://keepachangelog.com/
 [npm]: https://www.npmjs.com/
 [PostCSS]: http://postcss.org/
+[PostCSS-cssnext]: http://cssnext.io/
+[postcss-import]: https://github.com/postcss/postcss-import
 [sanitize.css]: https://jonathantneal.github.io/sanitize.css/
 [Shields.io]: http://shields.io/
 [stylelint]: http://stylelint.io/

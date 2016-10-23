@@ -49,7 +49,6 @@
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.1.0",
-    "autoprefixer": "^6.3.1",
     "babel-brunch": "^6.0.6",
     "brunch": "^2.5.2",
     "brunch-static": "^1.1.1",
@@ -73,7 +72,9 @@
     "gulplog": "^1.0.0",
     "html-brunch-static": "^1.2.1",
     "javascript-brunch": "^2.0.0",
-    "postcss-brunch": "^2.0.1",
+    "postcss-brunch": "^2.0.5",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.1.2",
     "run-sequence": "^1.2.2",
     "stylefmt": "^4.3.1",
     "stylelint-config-standard": "^14.0.0",

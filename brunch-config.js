@@ -1,10 +1,4 @@
 exports.config = {
-  npm: {
-    styles: {
-      'sanitize.css': ['sanitize.css']
-    }
-  },
-
   files: {
     javascripts: {
       joinTo: {
@@ -22,7 +16,8 @@ exports.config = {
   plugins: {
     postcss: {
       processors: [
-        require('autoprefixer')
+        require('postcss-import')(),
+        require('postcss-cssnext')()
       ]
     },
 
