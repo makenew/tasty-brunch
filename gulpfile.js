@@ -2,7 +2,6 @@
 
 const fs = require('fs')
 const path = require('path')
-const exec = require('child_process').exec
 
 const del = require('del')
 const gitRevSync = require('git-rev-sync')
