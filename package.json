@@ -21,7 +21,8 @@
     "mocha": "mocha",
 
     "test": "mocha --opts mocha.opts app/**/*.spec.js",
-      "pretest": "gulp lint && flow",
+      "pretest": "gulp lint",
+      "posttest": "flow",
 
     "build": "brunch build --production",
       "prebuild": "gulp clean",
