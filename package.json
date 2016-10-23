@@ -50,7 +50,7 @@
   "devDependencies": {
     "auto-reload-brunch": "^2.1.0",
     "babel-brunch": "^6.0.6",
-    "brunch": "^2.5.2",
+    "brunch": "^2.9.1",
     "brunch-static": "^1.1.1",
     "clean-css-brunch": "^2.0.0",
     "concurrently": "^3.0.0",
