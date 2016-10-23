@@ -21,8 +21,11 @@ let paths = {
 paths = Object.assign(paths, {
   html: `${paths.build}/**/*.html`,
   images: `${paths.build}/**/*.{gif,jpg,png}`,
-  scripts: `${paths.src}/**/*.js`,
-  styles: `${paths.src}/**/*.css`
+  styles: `${paths.src}/**/*.css`,
+  scripts: [
+    '*.js',
+    `${paths.src}/**/*.js`
+  ]
 })
 
 const dist = {
