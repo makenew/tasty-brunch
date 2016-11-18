@@ -62,13 +62,6 @@ gulp.task('watch', [
   'watch:styles'
 ])
 
-gulp.task('clean', () => (
-  del([
-    paths.build,
-    paths.dist
-  ])
-))
-
 gulp.task('htmlhint', () => (
   gulp.src(paths.html)
     .pipe($.htmlhint())
