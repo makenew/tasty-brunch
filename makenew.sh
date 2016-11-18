@@ -71,7 +71,8 @@ makenew () {
   find_replace "s/\/tasty-brunch/$(echo ${mk_baseurl} | sed s/\\//\\\\\\//g)/g"
 
   mk_attribution='> Built from [makenew/tasty-brunch](https://github.com/makenew/tasty-brunch).'
-  sed_insert README.md '9i' "${mk_attribution}\n"
+  sed_insert README.md '9i' ''
+  sed_insert README.md '9i' "${mk_attribution}"
 
   echo
   echo 'Replacing boilerplate.'
