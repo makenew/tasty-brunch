@@ -50,7 +50,7 @@
     "public"
   ],
   "engines": {
-    "node": "6.8.1"
+    "node": "7.1.0"
   },
   "dependencies": {
     "react": "^15.0.1",
