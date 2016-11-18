@@ -1,4 +1,6 @@
 exports.config = {
+  hot: true,
+
   conventions: {
     ignored: [
       /[\\/]_/,
@@ -8,15 +10,25 @@ exports.config = {
 
   files: {
     javascripts: {
-      joinTo: {
-        'vendor.js': /^vendor/
-      },
-      entryPoints: {
-        'app/index.js': 'app.js'
-      }
+      joinTo: 'app.js'
     },
     stylesheets: {
       joinTo: 'app.css'
+    }
+  },
+
+  overrides: {
+    production: {
+      files: {
+        javascripts: {
+          joinTo: {
+            'vendor.js': /^vendor/
+          },
+          entryPoints: {
+            'app/index.js': 'app.js'
+          }
+        }
+      }
     }
   },
 
@@ -34,6 +46,9 @@ exports.config = {
           handlebars: {
             enableProcessor: true,
             helpers: {
+              production () {
+                return process.env.NODE_ENV === 'production'
+              },
               urlprefix () {
                 const url = process.env.DOMAIN || 'makenew.github.io'
                 const baseurl = typeof process.env.BASEURL === 'string'

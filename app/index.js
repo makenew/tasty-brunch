@@ -10,6 +10,12 @@ import Counter from './components/Counter'
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
 
+if (module.hot) {
+  module.hot.accept('./reducers/counter', (d) => {
+    store.replaceReducer(require('./reducers/counter').default)
+  })
+}
+
 const render = () => {
   ReactDOM.render(
     <Counter
