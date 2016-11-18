@@ -21,8 +21,10 @@
     "test": "true",
       "pretest": "gulp lint",
 
+    "clean": "del public dist",
+
     "build": "brunch build --production",
-      "prebuild": "gulp clean",
+      "prebuild": "npm run clean",
       "postbuild": "gulp htmlhint",
 
     "dist": "npm run build",
