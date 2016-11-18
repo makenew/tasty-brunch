@@ -94,7 +94,7 @@ an instant-feedback development cycle and deployment pipeline.
    Optionally, reset to the latest [release][Releases] with
 
    ```
-   $ git reset --hard tasty-brunch-v3.3.0
+   $ git reset --hard tasty-brunch-v3.3.1
    ```
 
 2. Run
