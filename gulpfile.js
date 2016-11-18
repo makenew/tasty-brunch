@@ -3,7 +3,6 @@
 const fs = require('fs')
 const path = require('path')
 
-const del = require('del')
 const gitRevSync = require('git-rev-sync')
 const ghpages = require('gh-pages')
 const runSequence = require('run-sequence')
