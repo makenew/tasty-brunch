@@ -163,7 +163,7 @@ $ git remote add upstream https://github.com/makenew/tasty-brunch.git
 You can then fetch and merge changes with
 
 ```
-$ git fetch upstream
+$ git fetch --no-tags upstream
 $ git merge upstream/master
 ```
 
