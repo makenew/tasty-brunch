@@ -105,7 +105,7 @@ gulp.task('watch:scripts', () => (
     }))
     .pipe($.plumber())
     .pipe($.standard())
-    .pipe($.standard.reporter('default'))
+    .pipe($.standard.reporter('default'), {})
 ))
 
 gulp.task('watch:styles', () => (
